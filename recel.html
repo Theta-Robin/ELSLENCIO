@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Silencio - Catalogue des Objets Précieux</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #121212;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .category {
+            margin-bottom: 35px;
+        }
+
+        .category h2 {
+            color: #c0c0c0;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #222;
+            transition: all 0.2s;
+        }
+
+        .item:hover {
+            background-color: rgba(212, 175, 55, 0.05);
+            padding-left: 5px;
+        }
+
+        .item-name {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        .item-price {
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .disclaimer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .old-paper-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0);
+            background-size: 25px 25px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="old-paper-effect"></div>
+
+    <div class="container">
+        <h1>El Silencio</h1>
+
+        <div class="category">
+            <h2>Objets d'Art</h2>
+            <div class="item">
+                <div class="item-name">Statue de panthère</div>
+                <div class="item-price">65 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Pogo doré</div>
+                <div class="item-price">95 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Vase antique</div>
+                <div class="item-price">105 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Œuf antique</div>
+                <div class="item-price">105 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Œuf napoléonien</div>
+                <div class="item-price">115 000 $</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Tableaux</h2>
+            <div class="item">
+                <div class="item-name">Peinture ancienne 1968</div>
+                <div class="item-price">75 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Peinture ancienne 1964</div>
+                <div class="item-price">100 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Peinture ancienne 1856</div>
+                <div class="item-price">106 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Peinture ancienne 1819</div>
+                <div class="item-price">135 000 $</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Bijoux & Montres</h2>
+            <div class="item">
+                <div class="item-name">Montre à gousset</div>
+                <div class="item-price">2 300 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Montre en or</div>
+                <div class="item-price">2 700 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Collier de perle</div>
+                <div class="item-price">4 100 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Collier de saphir</div>
+                <div class="item-price">75 000 $</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Pierres Précieuses</h2>
+            <div class="item">
+                <div class="item-name">Saphir</div>
+                <div class="item-price">18 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Émeraude</div>
+                <div class="item-price">20 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Rubis</div>
+                <div class="item-price">24 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Diamant</div>
+                <div class="item-price">26 000 $</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Diamant précieux</div>
+                <div class="item-price">135 000 $</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Métaux Précieux</h2>
+            <div class="item">
+                <div class="item-name">Lingot d'or</div>
+                <div class="item-price">26 000 $</div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            Toutes les transactions sont confidentielles.<br>
+            Les prix sont négociables selon la qualité et la quantité.
+        </div>
+    </div>
+</body>
+</html>
