@@ -18,7 +18,40 @@
             position: relative;
         }
 
-        /* Effet de particules de poudre */
+        /* Effets de balles améliorés */
+        .bullet-impact {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .bullet-hole {
+            background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, transparent 70%);
+        }
+
+        .bullet-splash {
+            background: radial-gradient(circle, transparent 30%, rgba(139,0,0,0.2) 35%, rgba(139,0,0,0.1) 50%, transparent 70%);
+        }
+
+        .bullet-crack {
+            position: fixed;
+            background: linear-gradient(45deg, transparent 45%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.4) 55%, transparent 55%);
+            pointer-events: none;
+            z-index: 98;
+            transform-origin: center;
+        }
+
+        .bullet-metal {
+            position: fixed;
+            background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, rgba(212,175,55,0.1) 40%, transparent 70%);
+            pointer-events: none;
+            z-index: 97;
+            border-radius: 50%;
+        }
+
+        /* Particules de poudre */
         .particles {
             position: fixed;
             top: 0;
@@ -48,25 +81,8 @@
             }
         }
 
-        /* Effets de balles */
-        .bullet-hole {
-            position: fixed;
-            background: radial-gradient(circle, rgba(0,0,0,0.8) 30%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 99;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-
-        .bullet-crack {
-            position: fixed;
-            background: linear-gradient(45deg, transparent 40%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, transparent 60%);
-            pointer-events: none;
-            z-index: 98;
-        }
-
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 30px auto;
             padding: 30px;
             background-color: #121212;
@@ -75,9 +91,12 @@
             box-shadow: 0 0 30px rgba(180, 150, 50, 0.3);
             position: relative;
             z-index: 10;
+            background-image:
+                linear-gradient(45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%);
+            background-size: 20px 20px;
         }
 
-        /* Bandeau espagnol */
         .spanish-banner {
             background: linear-gradient(90deg, #8B0000 0%, #DC143C 100%);
             color: white;
@@ -90,6 +109,7 @@
             text-transform: uppercase;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             position: relative;
+            border-bottom: 2px solid #d4af37;
         }
 
         .spanish-banner::before {
@@ -130,6 +150,8 @@
         .category {
             margin-bottom: 35px;
             position: relative;
+            padding: 10px;
+            border-left: 3px solid #d4af37;
         }
 
         .category h2 {
@@ -158,11 +180,14 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            margin: 5px 0;
+            background-color: rgba(20,20,20,0.5);
         }
 
         .item:hover {
             background-color: rgba(212, 175, 55, 0.1);
             transform: translateX(5px);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
         .item:hover::after {
@@ -177,6 +202,18 @@
             color: #e0e0e0;
             font-weight: bold;
             position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spanish-name {
+            color: #d4af37;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .french-name {
+            color: #e0e0e0;
         }
 
         .item-price {
@@ -184,6 +221,10 @@
             font-weight: bold;
             font-size: 1.1em;
             position: relative;
+            align-self: center;
+            padding: 5px 10px;
+            background-color: rgba(20,20,20,0.7);
+            border-radius: 3px;
         }
 
         .item-price::before {
@@ -202,6 +243,7 @@
             text-align: center;
             font-style: italic;
             position: relative;
+            background-color: rgba(20,20,20,0.5);
         }
 
         .disclaimer::before {
@@ -210,15 +252,6 @@
             margin-right: 10px;
         }
 
-        /* Effet de papier déchiré */
-        .container {
-            background-image:
-                linear-gradient(45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%);
-            background-size: 20px 20px;
-        }
-
-        /* Effet de sang séché */
         .blood-splatter {
             position: fixed;
             pointer-events: none;
@@ -226,7 +259,6 @@
             opacity: 0.3;
         }
 
-        /* Animation de fumée */
         @keyframes smoke {
             0% { transform: scale(0.5) rotate(0deg); opacity: 0.8; }
             100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
@@ -240,19 +272,59 @@
             z-index: 96;
             animation: smoke 8s infinite;
         }
+
+        /* Effets de balle supplémentaires */
+        .bullet-exit {
+            position: fixed;
+            background: radial-gradient(circle at 70% 70%, transparent 0%, rgba(0,0,0,0.8) 30%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .bullet-scatter {
+            position: fixed;
+            background: radial-gradient(circle, transparent 0%, rgba(255,255,255,0.1) 20%, transparent 40%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 98;
+        }
     </style>
 </head>
 <body>
-    <!-- Effets de balles aléatoires -->
-    <div class="bullet-hole" style="width: 15px; height: 15px; top: 12%; left: 15%;"></div>
-    <div class="bullet-hole" style="width: 10px; height: 10px; top: 25%; left: 85%;"></div>
-    <div class="bullet-hole" style="width: 12px; height: 12px; top: 45%; left: 5%;"></div>
-    <div class="bullet-hole" style="width: 8px; height: 8px; top: 65%; left: 90%;"></div>
-    <div class="bullet-hole" style="width: 20px; height: 20px; top: 80%; left: 20%;"></div>
+    <!-- Impacts de balle réalistes -->
+    <div class="bullet-impact bullet-hole" style="width: 25px; height: 25px; top: 8%; left: 12%;"></div>
+    <div class="bullet-impact bullet-splash" style="width: 40px; height: 40px; top: 8%; left: 12%;"></div>
+    <div class="bullet-crack" style="width: 80px; height: 2px; top: 10%; left: 15%; transform: rotate(30deg);"></div>
 
-    <div class="bullet-crack" style="width: 100px; height: 2px; top: 15%; left: 30%; transform: rotate(45deg);"></div>
-    <div class="bullet-crack" style="width: 80px; height: 2px; top: 35%; left: 70%; transform: rotate(-30deg);"></div>
-    <div class="bullet-crack" style="width: 120px; height: 2px; top: 70%; left: 40%; transform: rotate(15deg);"></div>
+    <div class="bullet-impact bullet-exit" style="width: 30px; height: 30px; top: 15%; left: 85%;"></div>
+    <div class="bullet-impact bullet-metal" style="width: 20px; height: 20px; top: 15%; left: 85%;"></div>
+    <div class="bullet-crack" style="width: 60px; height: 2px; top: 18%; left: 80%; transform: rotate(-45deg);"></div>
+
+    <div class="bullet-impact bullet-hole" style="width: 20px; height: 20px; top: 25%; left: 5%;"></div>
+    <div class="bullet-impact bullet-scatter" style="width: 35px; height: 35px; top: 25%; left: 5%;"></div>
+
+    <div class="bullet-impact bullet-hole" style="width: 18px; height: 18px; top: 35%; left: 92%;"></div>
+    <div class="bullet-impact bullet-splash" style="width: 30px; height: 30px; top: 35%; left: 92%;"></div>
+    <div class="bullet-crack" style="width: 50px; height: 2px; top: 38%; left: 85%; transform: rotate(60deg);"></div>
+
+    <div class="bullet-impact bullet-exit" style="width: 22px; height: 22px; top: 45%; left: 18%;"></div>
+    <div class="bullet-impact bullet-metal" style="width: 15px; height: 15px; top: 45%; left: 18%;"></div>
+
+    <div class="bullet-impact bullet-hole" style="width: 28px; height: 28px; top: 55%; left: 88%;"></div>
+    <div class="bullet-impact bullet-splash" style="width: 45px; height: 45px; top: 55%; left: 88%;"></div>
+    <div class="bullet-crack" style="width: 90px; height: 2px; top: 60%; left: 80%; transform: rotate(-15deg);"></div>
+
+    <div class="bullet-impact bullet-hole" style="width: 15px; height: 15px; top: 68%; left: 25%;"></div>
+    <div class="bullet-impact bullet-scatter" style="width: 25px; height: 25px; top: 68%; left: 25%;"></div>
+
+    <div class="bullet-impact bullet-exit" style="width: 25px; height: 25px; top: 78%; left: 75%;"></div>
+    <div class="bullet-impact bullet-metal" style="width: 18px; height: 18px; top: 78%; left: 75%;"></div>
+    <div class="bullet-crack" style="width: 70px; height: 2px; top: 82%; left: 68%; transform: rotate(45deg);"></div>
+
+    <div class="bullet-impact bullet-hole" style="width: 20px; height: 20px; top: 90%; left: 15%;"></div>
+    <div class="bullet-impact bullet-splash" style="width: 35px; height: 35px; top: 90%; left: 15%;"></div>
 
     <!-- Taches de sang -->
     <div class="blood-splatter">
@@ -261,10 +333,11 @@
             <path d="M1200,300 Q1150,250 1100,300 T1000,300" stroke="rgba(139,0,0,0.2)" stroke-width="2" fill="none"/>
             <circle cx="800" cy="100" r="15" fill="rgba(139,0,0,0.15)"/>
             <circle cx="200" cy="500" r="20" fill="rgba(139,0,0,0.1)"/>
+            <path d="M400,600 Q450,550 500,600" stroke="rgba(139,0,0,0.15)" stroke-width="2" fill="none"/>
+            <circle cx="1000" cy="700" r="10" fill="rgba(139,0,0,0.1)"/>
         </svg>
     </div>
 
-    <!-- Particules de poudre -->
     <div class="particles" id="particles"></div>
 
     <div class="container">
@@ -272,182 +345,254 @@
             CATÁLOGO SECRETO DE EL SILENCIO
         </div>
 
-        <h1>Objetos de Valor</h1>
+        <h1>Objetos de Valor / Objets de Valeur</h1>
 
         <div class="category">
-            <h2>Arte y Antigüedades</h2>
+            <h2>Arte y Antigüedades / Art et Antiquités</h2>
             <div class="item">
-                <div class="item-name">Estatua de pantera (oro)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Estatua de pantera (oro macizo)</span>
+                    <span class="french-name">Statue de panthère (or massif)</span>
+                </div>
                 <div class="item-price">65 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Pogo dorado (siglo XVIII)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Pogo dorado (siglo XVIII)</span>
+                    <span class="french-name">Pogo doré (XVIIIe siècle)</span>
+                </div>
                 <div class="item-price">95 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Jarrón Ming (dinastía)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Jarrón Ming (dinastía original)</span>
+                    <span class="french-name">Vase Ming (dynastie originale)</span>
+                </div>
                 <div class="item-price">105 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Huevo Fabergé (réplica)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Huevo Fabergé (réplica exacta)</span>
+                    <span class="french-name">Œuf Fabergé (réplique exacte)</span>
+                </div>
                 <div class="item-price">105 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Huevo napoleónico (auténtico)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Huevo napoleónico (auténtico)</span>
+                    <span class="french-name">Œuf napoléonien (authentique)</span>
+                </div>
                 <div class="item-price">115 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Pinturas Robadas</h2>
+            <h2>Pinturas Robadas / Tableaux Volés</h2>
             <div class="item">
-                <div class="item-name">Óleo 1968 (desconocido)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Óleo 1968 (artista desconocido)</span>
+                    <span class="french-name">Peinture à l'huile 1968 (artiste inconnu)</span>
+                </div>
                 <div class="item-price">75 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Retrato 1964 (firmado)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Retrato 1964 (firmado)</span>
+                    <span class="french-name">Portrait 1964 (signé)</span>
+                </div>
                 <div class="item-price">100 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Paisaje 1856 (restaurado)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Paisaje 1856 (restaurado)</span>
+                    <span class="french-name">Paysage 1856 (restauré)</span>
+                </div>
                 <div class="item-price">106 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Retrato real 1819 (original)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Retrato real 1819 (original)</span>
+                    <span class="french-name">Portrait royal 1819 (original)</span>
+                </div>
                 <div class="item-price">135 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Joyería y Relojes</h2>
+            <h2>Joyería y Relojes / Bijoux et Montres</h2>
             <div class="item">
-                <div class="item-name">Reloj de bolsillo (oro)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Reloj de bolsillo (oro 18k)</span>
+                    <span class="french-name">Montre à gousset (or 18 carats)</span>
+                </div>
                 <div class="item-price">2 300</div>
             </div>
             <div class="item">
-                <div class="item-name">Rolex Daytona (oro)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Rolex Daytona (oro blanco)</span>
+                    <span class="french-name">Rolex Daytona (or blanc)</span>
+                </div>
                 <div class="item-price">27 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Collar de perlas (36 piezas)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Collar de perlas (36 piezas)</span>
+                    <span class="french-name">Collier de perles (36 pièces)</span>
+                </div>
                 <div class="item-price">4 100</div>
             </div>
             <div class="item">
-                <div class="item-name">Collar de zafiros (birmanos)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Collar de zafiros (birmanos)</span>
+                    <span class="french-name">Collier de saphirs (birmans)</span>
+                </div>
                 <div class="item-price">75 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Piedras Preciosas</h2>
+            <h2>Piedras Preciosas / Pierres Précieuses</h2>
             <div class="item">
-                <div class="item-name">Zafiro (5 quilates)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Zafiro (5 quilates, Birmania)</span>
+                    <span class="french-name">Saphir (5 carats, Birmanie)</span>
+                </div>
                 <div class="item-price">18 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Esmeralda (4 quilates)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Esmeralda (4 quilates, Colombia)</span>
+                    <span class="french-name">Émeraude (4 carats, Colombie)</span>
+                </div>
                 <div class="item-price">20 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Rubí (3 quilates)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Rubí (3 quilates, Tailandia)</span>
+                    <span class="french-name">Rubis (3 carats, Thaïlande)</span>
+                </div>
                 <div class="item-price">24 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Diamante (2 quilates)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Diamante (2 quilates, D color)</span>
+                    <span class="french-name">Diamant (2 carats, couleur D)</span>
+                </div>
                 <div class="item-price">26 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Diamante azul (5 quilates)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Diamante azul (5 quilates, raro)</span>
+                    <span class="french-name">Diamant bleu (5 carats, rare)</span>
+                </div>
                 <div class="item-price">135 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Metales Preciosos</h2>
+            <h2>Metales Preciosos / Métaux Précieux</h2>
             <div class="item">
-                <div class="item-name">Lingote de oro (1 kg)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Lingote de oro (1 kg, 999.9)</span>
+                    <span class="french-name">Lingot d'or (1 kg, 999.9)</span>
+                </div>
                 <div class="item-price">65 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Monedas de oro (100 piezas)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Monedas de oro (100 piezas, Krugerrand)</span>
+                    <span class="french-name">Pièces d'or (100 pièces, Krugerrand)</span>
+                </div>
                 <div class="item-price">30 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Armas de Colección</h2>
+            <h2>Armas de Colección / Armes de Collection</h2>
             <div class="item">
-                <div class="item-name">Colt 1911 (oro grabado)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Colt 1911 (oro grabado, edición limitada)</span>
+                    <span class="french-name">Colt 1911 (or gravé, édition limitée)</span>
+                </div>
                 <div class="item-price">12 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Navaja española (antigua)</div>
+                <div class="item-name">
+                    <span class="spanish-name">Navaja española (antigua, Toledo)</span>
+                    <span class="french-name">Couteau espagnol (ancien, Tolède)</span>
+                </div>
                 <div class="item-price">3 500</div>
             </div>
             <div class="item">
-                <div class="item-name">AK-47 (oro, edición limitada)</div>
+                <div class="item-name">
+                    <span class="spanish-name">AK-47 (oro, edición especial)</span>
+                    <span class="french-name">AK-47 (or, édition spéciale)</span>
+                </div>
                 <div class="item-price">45 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">
+                    <span class="spanish-name">Pistola Beretta (plata, grabada)</span>
+                    <span class="french-name">Pistolet Beretta (argent, gravé)</span>
+                </div>
+                <div class="item-price">8 500</div>
             </div>
         </div>
 
         <div class="disclaimer">
-            Todas las transacciones son confidenciales.<br>
-            Los precios son negociables según calidad y cantidad.<br>
-            Entrega discreta en cualquier lugar de España o Europa.
+            Todas las transacciones son confidenciales / Toutes les transactions sont confidentielles.<br>
+            Los precios son negociables según calidad y cantidad / Les prix sont négociables selon qualité et quantité.<br>
+            Entrega discreta en cualquier lugar de España o Europa / Livraison discrète partout en Espagne ou en Europe.<br>
+            <span style="color: #d4af37;">⚠ ADVERTENCIA: Objetos de procedencia cuestionable / ATTENTION: Objets d'origine douteuse</span>
         </div>
     </div>
 
     <script>
-        // Création des particules
+        // Création des particules de poudre
         const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
+        const particleCount = 80;
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
 
-            // Position aléatoire
             particle.style.left = Math.random() * 100 + '%';
             particle.style.top = Math.random() * 100 + '%';
 
-            // Taille aléatoire
             const size = Math.random() * 5 + 1;
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
 
-            // Durée d'animation aléatoire
-            const duration = Math.random() * 10 + 5;
+            const duration = Math.random() * 15 + 10;
             particle.style.animationDuration = duration + 's';
 
-            // Délai aléatoire
             particle.style.animationDelay = Math.random() * 5 + 's';
 
             particlesContainer.appendChild(particle);
         }
 
-        // Création de fumée aléatoire
+        // Création de la fumée
         setInterval(() => {
             const smoke = document.createElement('div');
             smoke.classList.add('smoke');
 
-            // Position aléatoire près des bords
             const side = Math.floor(Math.random() * 4);
             let left, top;
 
             switch(side) {
-                case 0: // haut
+                case 0:
                     left = Math.random() * 100 + '%';
                     top = '0%';
                     break;
-                case 1: // droite
+                case 1:
                     left = '100%';
                     top = Math.random() * 100 + '%';
                     break;
-                case 2: // bas
+                case 2:
                     left = Math.random() * 100 + '%';
                     top = '100%';
                     break;
-                case 3: // gauche
+                case 3:
                     left = '0%';
                     top = Math.random() * 100 + '%';
                     break;
@@ -456,21 +601,26 @@
             smoke.style.left = left;
             smoke.style.top = top;
 
-            // Taille aléatoire
-            const size = Math.random() * 30 + 20;
+            const size = Math.random() * 40 + 20;
             smoke.style.width = size + 'px';
             smoke.style.height = size + 'px';
 
-            // Durée d'animation aléatoire
-            const duration = Math.random() * 5 + 3;
+            const duration = Math.random() * 8 + 4;
             smoke.style.animationDuration = duration + 's';
 
             document.body.appendChild(smoke);
 
-            // Suppression après animation
             setTimeout(() => {
                 smoke.remove();
             }, duration * 1000);
+        }, 1500);
+
+        // Animation des impacts de balle
+        setInterval(() => {
+            const impacts = document.querySelectorAll('.bullet-impact, .bullet-crack');
+            impacts.forEach(impact => {
+                impact.style.transform = `scale(${Math.random() * 0.1 + 0.95})`;
+            });
         }, 2000);
     </script>
 </body>
