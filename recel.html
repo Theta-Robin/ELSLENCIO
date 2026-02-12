@@ -5,13 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Silencio - Catalogue des Objets Précieux</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Special+Elite&display=swap');
+
         body {
             background-color: #0a0a0a;
             color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Special Elite', cursive;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Effet de particules de poudre */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Effets de balles */
+        .bullet-hole {
+            position: fixed;
+            background: radial-gradient(circle, rgba(0,0,0,0.8) 30%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .bullet-crack {
+            position: fixed;
+            background: linear-gradient(45deg, transparent 40%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, transparent 60%);
+            pointer-events: none;
+            z-index: 98;
         }
 
         .container {
@@ -19,23 +70,66 @@
             margin: 30px auto;
             padding: 30px;
             background-color: #121212;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(180, 150, 50, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Bandeau espagnol */
+        .spanish-banner {
+            background: linear-gradient(90deg, #8B0000 0%, #DC143C 100%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: -30px -30px 30px -30px;
+            font-family: 'Alfa Slab One', cursive;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .spanish-banner::before {
+            content: "★";
+            position: absolute;
+            left: 20px;
+            color: #FFD700;
+        }
+
+        .spanish-banner::after {
+            content: "★";
+            position: absolute;
+            right: 20px;
+            color: #FFD700;
         }
 
         h1 {
             color: #d4af37;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 2.8em;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
+            letter-spacing: 3px;
+            font-family: 'Alfa Slab One', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #d4af37;
+            margin: 10px auto;
         }
 
         .category {
             margin-bottom: 35px;
+            position: relative;
         }
 
         .category h2 {
@@ -43,166 +137,341 @@
             font-size: 1.5em;
             margin-bottom: 15px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #222;
+            border-bottom: 2px solid #333;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-family: 'Alfa Slab One', cursive;
+            position: relative;
+        }
+
+        .category h2::before {
+            content: "▶";
+            color: #d4af37;
+            margin-right: 10px;
         }
 
         .item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #222;
-            transition: all 0.2s;
+            padding: 12px 15px;
+            border-bottom: 1px dashed #333;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .item:hover {
-            background-color: rgba(212, 175, 55, 0.05);
-            padding-left: 5px;
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px);
+        }
+
+        .item:hover::after {
+            content: "→";
+            position: absolute;
+            right: 15px;
+            color: #d4af37;
+            font-size: 1.2em;
         }
 
         .item-name {
             color: #e0e0e0;
-            font-weight: 500;
+            font-weight: bold;
+            position: relative;
         }
 
         .item-price {
             color: #d4af37;
             font-weight: bold;
             font-size: 1.1em;
+            position: relative;
+        }
+
+        .item-price::before {
+            content: "$";
+            color: #8B0000;
+            font-size: 0.8em;
+            margin-right: 2px;
         }
 
         .disclaimer {
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            font-size: 0.8em;
-            color: #888;
+            padding: 20px;
+            border: 1px dashed #555;
+            font-size: 0.9em;
+            color: #aaa;
             text-align: center;
             font-style: italic;
+            position: relative;
         }
 
-        .old-paper-effect {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .disclaimer::before {
+            content: "⚠";
+            color: #d4af37;
+            margin-right: 10px;
+        }
+
+        /* Effet de papier déchiré */
+        .container {
             background-image:
-                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0);
-            background-size: 25px 25px;
-            opacity: 0.05;
+                linear-gradient(45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%);
+            background-size: 20px 20px;
+        }
+
+        /* Effet de sang séché */
+        .blood-splatter {
+            position: fixed;
             pointer-events: none;
-            z-index: -1;
+            z-index: 97;
+            opacity: 0.3;
+        }
+
+        /* Animation de fumée */
+        @keyframes smoke {
+            0% { transform: scale(0.5) rotate(0deg); opacity: 0.8; }
+            100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
+        }
+
+        .smoke {
+            position: fixed;
+            background: radial-gradient(circle, rgba(50,50,50,0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 96;
+            animation: smoke 8s infinite;
         }
     </style>
 </head>
 <body>
-    <div class="old-paper-effect"></div>
+    <!-- Effets de balles aléatoires -->
+    <div class="bullet-hole" style="width: 15px; height: 15px; top: 12%; left: 15%;"></div>
+    <div class="bullet-hole" style="width: 10px; height: 10px; top: 25%; left: 85%;"></div>
+    <div class="bullet-hole" style="width: 12px; height: 12px; top: 45%; left: 5%;"></div>
+    <div class="bullet-hole" style="width: 8px; height: 8px; top: 65%; left: 90%;"></div>
+    <div class="bullet-hole" style="width: 20px; height: 20px; top: 80%; left: 20%;"></div>
+
+    <div class="bullet-crack" style="width: 100px; height: 2px; top: 15%; left: 30%; transform: rotate(45deg);"></div>
+    <div class="bullet-crack" style="width: 80px; height: 2px; top: 35%; left: 70%; transform: rotate(-30deg);"></div>
+    <div class="bullet-crack" style="width: 120px; height: 2px; top: 70%; left: 40%; transform: rotate(15deg);"></div>
+
+    <!-- Taches de sang -->
+    <div class="blood-splatter">
+        <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+            <path d="M50,200 Q100,150 150,200 T250,200" stroke="rgba(139,0,0,0.2)" stroke-width="3" fill="none"/>
+            <path d="M1200,300 Q1150,250 1100,300 T1000,300" stroke="rgba(139,0,0,0.2)" stroke-width="2" fill="none"/>
+            <circle cx="800" cy="100" r="15" fill="rgba(139,0,0,0.15)"/>
+            <circle cx="200" cy="500" r="20" fill="rgba(139,0,0,0.1)"/>
+        </svg>
+    </div>
+
+    <!-- Particules de poudre -->
+    <div class="particles" id="particles"></div>
 
     <div class="container">
-        <h1>El Silencio</h1>
+        <div class="spanish-banner">
+            CATÁLOGO SECRETO DE EL SILENCIO
+        </div>
+
+        <h1>Objetos de Valor</h1>
 
         <div class="category">
-            <h2>Objets d'Art</h2>
+            <h2>Arte y Antigüedades</h2>
             <div class="item">
-                <div class="item-name">Statue de panthère</div>
-                <div class="item-price">65 000 $</div>
+                <div class="item-name">Estatua de pantera (oro)</div>
+                <div class="item-price">65 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Pogo doré</div>
-                <div class="item-price">95 000 $</div>
+                <div class="item-name">Pogo dorado (siglo XVIII)</div>
+                <div class="item-price">95 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Vase antique</div>
-                <div class="item-price">105 000 $</div>
+                <div class="item-name">Jarrón Ming (dinastía)</div>
+                <div class="item-price">105 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Œuf antique</div>
-                <div class="item-price">105 000 $</div>
+                <div class="item-name">Huevo Fabergé (réplica)</div>
+                <div class="item-price">105 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Œuf napoléonien</div>
-                <div class="item-price">115 000 $</div>
+                <div class="item-name">Huevo napoleónico (auténtico)</div>
+                <div class="item-price">115 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Tableaux</h2>
+            <h2>Pinturas Robadas</h2>
             <div class="item">
-                <div class="item-name">Peinture ancienne 1968</div>
-                <div class="item-price">75 000 $</div>
+                <div class="item-name">Óleo 1968 (desconocido)</div>
+                <div class="item-price">75 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Peinture ancienne 1964</div>
-                <div class="item-price">100 000 $</div>
+                <div class="item-name">Retrato 1964 (firmado)</div>
+                <div class="item-price">100 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Peinture ancienne 1856</div>
-                <div class="item-price">106 000 $</div>
+                <div class="item-name">Paisaje 1856 (restaurado)</div>
+                <div class="item-price">106 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Peinture ancienne 1819</div>
-                <div class="item-price">135 000 $</div>
-            </div>
-        </div>
-
-        <div class="category">
-            <h2>Bijoux & Montres</h2>
-            <div class="item">
-                <div class="item-name">Montre à gousset</div>
-                <div class="item-price">2 300 $</div>
-            </div>
-            <div class="item">
-                <div class="item-name">Montre en or</div>
-                <div class="item-price">2 700 $</div>
-            </div>
-            <div class="item">
-                <div class="item-name">Collier de perle</div>
-                <div class="item-price">4 100 $</div>
-            </div>
-            <div class="item">
-                <div class="item-name">Collier de saphir</div>
-                <div class="item-price">75 000 $</div>
+                <div class="item-name">Retrato real 1819 (original)</div>
+                <div class="item-price">135 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Pierres Précieuses</h2>
+            <h2>Joyería y Relojes</h2>
             <div class="item">
-                <div class="item-name">Saphir</div>
-                <div class="item-price">18 000 $</div>
+                <div class="item-name">Reloj de bolsillo (oro)</div>
+                <div class="item-price">2 300</div>
             </div>
             <div class="item">
-                <div class="item-name">Émeraude</div>
-                <div class="item-price">20 000 $</div>
+                <div class="item-name">Rolex Daytona (oro)</div>
+                <div class="item-price">27 000</div>
             </div>
             <div class="item">
-                <div class="item-name">Rubis</div>
-                <div class="item-price">24 000 $</div>
+                <div class="item-name">Collar de perlas (36 piezas)</div>
+                <div class="item-price">4 100</div>
             </div>
             <div class="item">
-                <div class="item-name">Diamant</div>
-                <div class="item-price">26 000 $</div>
-            </div>
-            <div class="item">
-                <div class="item-name">Diamant précieux</div>
-                <div class="item-price">135 000 $</div>
+                <div class="item-name">Collar de zafiros (birmanos)</div>
+                <div class="item-price">75 000</div>
             </div>
         </div>
 
         <div class="category">
-            <h2>Métaux Précieux</h2>
+            <h2>Piedras Preciosas</h2>
             <div class="item">
-                <div class="item-name">Lingot d'or</div>
-                <div class="item-price">26 000 $</div>
+                <div class="item-name">Zafiro (5 quilates)</div>
+                <div class="item-price">18 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Esmeralda (4 quilates)</div>
+                <div class="item-price">20 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Rubí (3 quilates)</div>
+                <div class="item-price">24 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Diamante (2 quilates)</div>
+                <div class="item-price">26 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Diamante azul (5 quilates)</div>
+                <div class="item-price">135 000</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Metales Preciosos</h2>
+            <div class="item">
+                <div class="item-name">Lingote de oro (1 kg)</div>
+                <div class="item-price">65 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Monedas de oro (100 piezas)</div>
+                <div class="item-price">30 000</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Armas de Colección</h2>
+            <div class="item">
+                <div class="item-name">Colt 1911 (oro grabado)</div>
+                <div class="item-price">12 000</div>
+            </div>
+            <div class="item">
+                <div class="item-name">Navaja española (antigua)</div>
+                <div class="item-price">3 500</div>
+            </div>
+            <div class="item">
+                <div class="item-name">AK-47 (oro, edición limitada)</div>
+                <div class="item-price">45 000</div>
             </div>
         </div>
 
         <div class="disclaimer">
-            Toutes les transactions sont confidentielles.<br>
-            Les prix sont négociables selon la qualité et la quantité.
+            Todas las transacciones son confidenciales.<br>
+            Los precios son negociables según calidad y cantidad.<br>
+            Entrega discreta en cualquier lugar de España o Europa.
         </div>
     </div>
+
+    <script>
+        // Création des particules
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            // Position aléatoire
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+
+            // Taille aléatoire
+            const size = Math.random() * 5 + 1;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+
+            // Durée d'animation aléatoire
+            const duration = Math.random() * 10 + 5;
+            particle.style.animationDuration = duration + 's';
+
+            // Délai aléatoire
+            particle.style.animationDelay = Math.random() * 5 + 's';
+
+            particlesContainer.appendChild(particle);
+        }
+
+        // Création de fumée aléatoire
+        setInterval(() => {
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+
+            // Position aléatoire près des bords
+            const side = Math.floor(Math.random() * 4);
+            let left, top;
+
+            switch(side) {
+                case 0: // haut
+                    left = Math.random() * 100 + '%';
+                    top = '0%';
+                    break;
+                case 1: // droite
+                    left = '100%';
+                    top = Math.random() * 100 + '%';
+                    break;
+                case 2: // bas
+                    left = Math.random() * 100 + '%';
+                    top = '100%';
+                    break;
+                case 3: // gauche
+                    left = '0%';
+                    top = Math.random() * 100 + '%';
+                    break;
+            }
+
+            smoke.style.left = left;
+            smoke.style.top = top;
+
+            // Taille aléatoire
+            const size = Math.random() * 30 + 20;
+            smoke.style.width = size + 'px';
+            smoke.style.height = size + 'px';
+
+            // Durée d'animation aléatoire
+            const duration = Math.random() * 5 + 3;
+            smoke.style.animationDuration = duration + 's';
+
+            document.body.appendChild(smoke);
+
+            // Suppression après animation
+            setTimeout(() => {
+                smoke.remove();
+            }, duration * 1000);
+        }, 2000);
+    </script>
 </body>
 </html>
