@@ -3,451 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL SILENCIO | Organisation Secrète</title>
+    <title>EL SILENCIO | Stratégie de Domination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header / Navigation -->
+    <!-- Header -->
     <header>
         <div class="logo">
             <h1>EL <span>SILENCIO</span></h1>
+            <p>La famille qui ne parle pas... mais écrase.</p>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="recel.html">Recel</a></li>
-
-                <li><a href="#history">Histoire</a></li>
-                <li><a href="#hierarchy">Hiérarchie</a></li>
-                <li><a href="#vehicles">Véhicules</a></li>
+                <li><a href="#strategy">Stratégie</a></li>
+                <li><a href="#weapons">Armes</a></li>
+                <li><a href="#drugs">Drogues</a></li>
+                <li><a href="#enemies">Ennemis</a></li>
                 <li><a href="#recruit">Rejoindre</a></li>
-                <!-- Bouton pour télécharger en PDF -->
-<div class="pdf-download">
-    <button id="download-pdf" class="cta-button">TÉLÉCHARGER EN PDF</button>
-</div>
-
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section (Page d'accueil) -->
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h2>L'ORGANISATION QUI NE PARLE PAS... MAIS AGIT.</h2>
-            <p>Depuis des décennies, nous contrôlons l'ombre. Rejoignez-nous ou disparaissez.</p>
-            <a href="#recruit" class="cta-button">REJOINDRE</a>
+            <h2>STRATÉGIE DE DOMINATION</h2>
+            <p>Nous allons écraser Los Santos. Voici le plan.</p>
+            <div class="strategy-icons">
+                <div class="icon-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Faire le plus d'argent</p>
+                </div>
+                <div class="icon-card">
+                    <i class="fas fa-crosshairs"></i>
+                    <p>Contrôler la ville</p>
+                </div>
+                <div class="icon-card">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <p>Écraser les rivaux</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Histoire de l'organisation -->
-    <!-- Histoire de l'organisation -->
-<section id="history" class="history">
-    <h2>NOTRE HISTOIRE</h2>
-
-    <!-- Timeline interactive -->
-   <!-- Timeline interactive -->
-<div class="timeline">
-    <!-- Les Racines -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LES RACINES DU SILENCE</h3>
-            <p>Tadeo Raves et son frère cadet, **Mateo "El Fantasma"**, ont grandi dans l’ombre des montagnes d’<strong>Alcalá la Real</strong>, élevés par un oncle impliqué dans le trafic de méthamphétamine. Dès l’adolescence, Tadeo se distingue par son intelligence froide et son ambition démesurée. Il voit dans le crime organisé bien plus qu’un gagne-pain : <strong>une dynastie à bâtir</strong>.</p>
-            <div class="timeline-image">
-                <!-- Image d'Alcalá la Real ou d'une carte ancienne de l'Andalousie -->
-            </div>
-        </div>
-    </div>
-
-    <!-- La Naissance d'El Silentio -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA NAISSANCE D'EL SILENCIO</h3>
-            <p>À 25 ans, Tadeo prend les rênes du cartel familial après avoir éliminé son oncle dans un coup d’éclat sanglant. Il rebaptise l’organisation <strong>El Silencio</strong>, symbole de discrétion et de terreur. Mateo, plus impulsif, devient son bras droit, chargé des opérations "sales". Ensemble, ils transforment le cartel en une machine de guerre, contrôlant les routes de la méthamphétamine entre l’Espagne et l’Afrique du Nord.</p>
-        </div>
-    </div>
-
-    <!-- L'Apogée -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'APOGÉE</h3>
-            <p>En quelques années, El Silencio domine le marché européen. Tadeo, stratège génial, étend son influence jusqu’aux ports de <strong>Maroc</strong> et de <strong>Pays-Bas</strong>. Mais son leadership est menacé : des rumeurs de trahison circulent. Son cousin, **Diego "El Lobo"**, ancien soldat des cartels mexicains, commence à contester son autorité, arguant que Tadeo "oublie les valeurs de la famille".</p>
-            <div class="timeline-image">
-                <!-- Image d'un port ou d'une réunion de cartel -->
-            </div>
-        </div>
-    </div>
-
-    <!-- La Trahison -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA TRAHISON</h3>
-            <p>Lors d’une réunion secrète à <strong>Malaga</strong>, Diego passe à l’action. Avec l’aide de Mateo, manipulé par des promesses de pouvoir, il tente d’assassiner Tadeo. Ce dernier survit de justesse, mais El Silencio sombre dans le chaos : entrepôts incendiés, livraisons interceptées, hommes loyaux exécutés. Tadeo, blessé et trahi, fuit vers les <strong>États-Unis</strong> avec une poignée de fidèles, laissant derrière lui un empire en lambeaux.</p>
-            <div class="timeline-image">
-                <!-- Image d'une fusillade ou d'un entrepôt en feu -->
-            </div>
-        </div>
-    </div>
-
-    <!-- L'Exil -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'EXIL</h3>
-            <p>Installé à <strong>Phoenix, Arizona</strong>, Tadeo se reconstruit dans l’ombre. Il comprend que pour reprendre le contrôle, il lui faut un allié de confiance… et un plan infaillible. Il contacte alors **Rafael "El Primo"**, son cousin éloigné, un ancien lieutenant du cartel de Sinaloa, connu pour sa brutalité et sa loyauté indéfectible. Ensemble, ils préparent la contre-attaque.</p>
-        </div>
-    </div>
-
-    <!-- La Revanche -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA REVANCHE</h3>
-            <p>De retour en Espagne, Tadeo et Rafael lancent une guerre éclair. Diego et Mateo sont traqués sans pitié. Les hommes d’El Silencio, divisés, doivent choisir leur camp. En quelques semaines, les traîtres sont éliminés, et Tadeo reprend le contrôle. Mais cette fois, il ne commettra pas les mêmes erreurs : <strong>El Silentio devient une machine sans pitié, où la loyauté se paie en sang</strong>.</p>
-            <div class="timeline-image">
-                <!-- Image d'une exécution ou d'une réunion de cartel tendue -->
-            </div>
-        </div>
-    </div>
-
-    <!-- L'Empire Transatlantique -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'EMPIRE TRANSATLANTIQUE</h3>
-            <p>Aujourd’hui, El Silentio est une légende. Tadeo règne en maître absolu, avec Rafael à ses côtés. Leur empire s’étend de <strong>l’Andalousie aux rues de Los Angeles</strong>, et leur méthamphétamine, d’une pureté inégalée, inonde le marché américain. Mais dans l’ombre, les ennemis se multiplient… et Tadeo sait qu’une nouvelle trahison pourrait venir de là où on ne l’attend pas.</p>
-            <div class="timeline-quote">
-                <p>"La famille, c’est comme la méth : ça brûle ceux qui la touchent sans précaution. Moi, j’ai appris à la distiller." — <strong>Tadeo Raves</strong></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-</section>
-
-
-    <!-- Hiérarchie (Organigramme) -->
-<section id="hierarchy" class="hierarchy">
-    <h2>HIÉRARCHIE</h2>
-    <div class="org-chart-container">
-        <div class="org-chart">
-            <!-- Frères Jimenez (Niveau 1) -->
-            <div class="org-level-1">
-                <div class="org-node leader">
-                    <div class="node-content">
-                        <h3>Tadéos Raves</h3>
-                        <p>Parrain (Fondateur)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
+    <!-- Stratégie -->
+    <section id="strategy" class="strategy">
+        <h2>NOTRE PLAN EN 2 PHASES</h2>
+        <div class="strategy-grid">
+            <!-- Plan A -->
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <h3><i class="fas fa-dollar-sign"></i> PLAN A : ÉCONOMIE DE GUERRE</h3>
                 </div>
-                <div class="org-node leader">
-                    <div class="node-content">
-                        <h3>Lencio Jimenez</h3>
-                        <p>Parrain (Bras droit)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
+                <div class="strategy-body">
+                    <p><strong>1. Acheter des MK2 en masse</strong> → Les revendre avec une marge.</p>
+                    <p><strong>2. Acheter des AK-47</strong> → Pour nous.</p>
+                    <p><strong>3. Se faire une réputation</strong> → Protéger les Lampadati, devenir leurs associé officiels.</p>
+                    <p><strong>4. Attaquer les Herrera et la French</strong> → Prendre  leurs labos.</p>
+                </div>
+                <div class="strategy-footer">
+                    <p>✅ <strong>Avantage :</strong> Moins de risques, plus d'argent.</p>
+                    <p>❌ <strong>Risque :</strong> Les rivaux peuvent se renforcer.</p>
                 </div>
             </div>
-
-            <!-- Ligne de connexion entre niveaux -->
-            <div class="org-connector"></div>
-
-            <!-- Niveau 2 (Bras droits) -->
-            <div class="org-level-2">
-                <div class="org-node underboss">
-                    <div class="node-content">
-                        <h3>Mattio Raves</h3>
-                        <p>HG (armes)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
+            <!-- Plan B -->
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <h3><i class="fas fa-bomb"></i> PLAN B : GUERRE TOTALE</h3>
                 </div>
-                <div class="org-node underboss">
-                    <div class="node-content">
-                        <h3>Roberto Di Biasio</h3>
-                        <p>HG (Finances)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
+                <div class="strategy-body">
+                    <p><strong>1. Attaquer directement les Herrera</strong> → Prendre leurs stocks d'armes.</p>
+                    <p><strong>2. Détruire la French</strong> → Reprendre leurs labo.</p>
+                    <p><strong>3. Contrôler les points clés</strong> → Port.</p>
+                    <p><strong>4. Imposer notre loi</strong> → .</p>
                 </div>
-                <div class="org-node underboss">
-                    <div class="node-content">
-                        <h3>Jose Raves</h3>
-                        <p>HG (Sécurité)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
-                </div>
-                <div class="org-node underboss">
-                    <div class="node-content">
-                        <h3>Raphaél  Jimenez</h3>
-                        <p>HG (conseiller)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Niveau 3 (Lieutenants) -->
-            <div class="org-level-3">
-                <div class="org-node lieutenant">
-                    <div class="node-content">
-                        <h3>Mayson Vindiero</h3>
-                        <p>Lieutenant</p>
-                        <div class="flags">
-                        </div>
-                    </div>
-                </div>
-                <div class="org-node lieutenant">
-                    <div class="node-content">
-                        <h3>Tonton</h3>
-                        <p>Lieutenant (Renseignement)</p>
-                        <div class="flags">
-                        </div>
-                    </div>
-                </div>
-                <div class="org-node lieutenant">
-                    <div class="node-content">
-                        <h3>Fabio Lancelotti</h3>
-                        <p>Lieutenant</p>
-                        <div class="flags">
-                        </div>
-                    </div>
+                <div class="strategy-footer">
+                    <p>✅ <strong>Avantage :</strong> Domination rapide.</p>
+                    <p>❌ <strong>Risque :</strong> Beaucoup de morts, attention des flics.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
- <section id="vehicles" class="vehicles">
-        <h2>NOS tenue</h2>
-        <div class="vehicle-gallery">
-            <img src="tenues.png" alt="Flotte de véhicules">
-
+        <div class="strategy-decision">
+            <h3>QUEL PLAN CHOISIR ?</h3>
+            <p>Le Plan A est plus sûr, mais le Plan B est plus efficace. <strong>À vous de décider.</strong></p>
+            <div class="decision-buttons">
+                <button id="planA">CHOISIR PLAN A</button>
+                <button id="planB">CHOISIR PLAN B</button>
+            </div>
         </div>
     </section>
-    <!-- Véhicules -->
-    <section id="vehicles" class="vehicles">
-        <h2>NOS VÉHICULES</h2>
-        <div class="vehicle-gallery">
-            <img src="qg.png" alt="Flotte de véhicules">
-                        <img src="voiture2.png" alt="Flotte de véhicules">
 
-            <p>Notre flotte comprend des voitures blindées, des motos et des hélicoptères. Chaque véhicule est équipé pour les missions les plus dangereuses.</p>
-        </div>
-    </section>
-<!-- ===== OPÉRATIONS SECRÈTES ===== -->
-<section id="operations" class="operations">
-    <h2>OPÉRATIONS SECRÈTES</h2>
-
-    <!-- 1. QG Secret (Villa) -->
-    <div class="operation-section">
-        <h3>🏰 NOTRE Villa actuelle - VILLA EL SILENCIO</h3>
-        <div class="operation-content">
-            <!-- Image devant -->
-            <div class="operation-image">
-                <img src="qg.png" alt="Villa El Silentio - Entrée principale">
-                <div class="image-caption">Entrée principale - Île de Majorque</div>
+    <!-- Armes -->
+    <section id="weapons" class="weapons">
+        <h2>NOTRE ARSENAL</h2>
+        <div class="weapons-grid">
+            <div class="weapon-card">
+                <img src="https://i.imgur.com/5J3X9qL.png" alt="MK2 Oppressor">
+                <h3>MK2 </h3>
+                <p><strong>Prix :</strong> $220000</p>
+                <p><strong>Utilité :</strong> Vente pour faire du cash rapidement.</p>
             </div>
-
-            <div class="operation-text">
-                <p>Notre quartier général est une <strong>forteresse impénétrable</strong> située sur LS dans le sud de la ville:</p>
-                <ul>
-                    <li><strong>Sécurité maximale</strong> : Caméras 4K</li>
-                    <li><strong>Salle des opérations</strong> : Tableau tactique</li>
-                    <li><strong>Garage blindé</strong></li>
-                    <li><strong>Héliport privé</strong> : Pour les déplacements discrets et rapides</li>
-                </ul>
-
-                <!-- Carte interactive -->
-                <div class="map-container">
-                    <div id="map"></div>
-                </div>
-
-                <!-- Image satellite -->
-                <div class="operation-image satellite">
-                    <img src="carte.png" alt="Vue satellite de la Villa El Silentio">
-                    <div class="image-caption">Vue satellite - Coordonnées classifiées</div>
-                </div>
-            </div>
-        </div>
-        <!-- 4. Objectifs Villa -->
-<div class="operation-section">
-    <h3>🏗️ OBJECTIFS  DE VILLA - VILLA EL SILENCIO</h3>
-    <div class="operation-content">
-        <div class="operation-text">
-            <p>Notre quartier général est <strong>l'épine dorsale de notre organisation</strong></p>
-
-            <div class="objectives-grid">
-                <!-- Sécurité -->
-               
-            </div>
-        </div>
-
-        <!-- Galerie d'images -->
-        <div class="villa-images">
-            <div class="operation-image">
-                <img src="reyes.png" alt="Villa El Silentio - Façade principale">
-                                <img src="reye.png" alt="Villa El Silentio - Façade principale">
-
-                <div class="image-caption">Façade principale - Système de sécurité activé</div>
-            </div>
-            <div class="operation-image">
-                <img src="villa4.png" alt="Plan satellite de la Villa El Silentio">
-                <div class="image-caption">Plan satellite - Zone de sécurité (classifié)</div>
+            <div class="weapon-card">
+                <img src="https://i.imgur.com/5J3X9qL.png" alt="AK-47">
+                <h3>AK-47</h3>
+                <p><strong>Prix :</strong> $11000000</p>
+                <p><strong>Utilité :</strong> Arme de guerre.</p>
             </div>
             
         </div>
-    </div>
-</div>
+    </section>
 
-    </div>
-
-    <!-- 2. Objectifs Armes -->
-    <div class="operation-section">
-        <h3>🔫 OBJECTIFS ARMEMENT</h3>
-        <div class="operation-content">
-            <div class="operation-text">
-                <p>Notre arsenal est <strong>la clé de notre domination</strong>. Voici nos objectifs pour les 12 prochains mois :</p>
-
-                <div class="objectives-grid">
-                    <div class="objective-card">
-                        <div class="objective-icon">🎯</div>
-                        <h4>Expansion du stock</h4>
-                        <p>Augmenter notre réserve d' armes </p>
-                        <p>Augmenter notre réserve de recel </p>
-                        <p>Augmenter notre réserve de drogue </p>
-
-                    </div>
-                    <div class="objective-card">
-                        <div class="objective-icon">🛡️</div>
-                        <h4>Équipement tactique</h4>
-                        <p>Équiper tous nos lieutenants de gilets pare-balles</p>
-                        <p>Équiper tous nos hommes de fusils automatique</p>
-                    </div>
-                    <div class="objective-card">
-                        <div class="objective-icon">💰</div>
-                        <h4>Réseau de fournisseurs</h4>
-                        <p>Établir des contacts directs </p>
-                        <p>Établir des contacts de drogue / ventes </p>
-                    </div>
-                    <div class="objective-card">
-                        <div class="objective-icon">🚛</div>
-                        <h4>Logistique sécurisée</h4>
-                        <p>Mettre en place de la sécurité sur nos transaction mission ect ect </p>
-                    </div>
-                </div>
-
-                <!-- Galerie d'armes -->
-                <div class="weapons-gallery">
-                    <div class="weapon-item">
-                        <img src="guz.png" alt="Glock 17">
-                        <div class="weapon-caption">Guze</div>
-                    </div>
-                   
-                </div>
+    <!-- Drogues -->
+    <section id="drugs" class="drugs">
+        <h2>NOTRE BUSINESS DE DROGUE</h2>
+        <div class="drugs-grid">
+            <div class="drug-card">
+                <i class="fas fa-pills"></i>
+                <h3>Cocaïne</h3>
+                <p><strong>Prix de vente :</strong> $450000/1T</p>
+                <p><strong>Production :</strong> .</p>
+            </div>
+         
+            <div class="drug-card">
+                <i class="fas fa-syringe"></i>
+                <h3>Meth</h3>
+                <p><strong>Prix de vente :</strong> $450000/1T</p>
+                <p><strong>Production :</strong>.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- 3. Objectifs Drogue -->
-    <div class="operation-section">
-        <h3>💊 OBJECTIFS DROGUE</h3>
-        <div class="operation-content">
-            <div class="operation-text">
-                <p>Notre empire repose sur <strong>trois piliers indestructibles</strong>. Voici nos objectifs pour dominer le marché :</p>
-
-                <div class="drug-objectives">
-                    <div class="drug-card">
-                        <div class="drug-icon">🔥</div>
-                        <h4>Méthamphétamine</h4>
-                        <p><strong>Objectif :</strong> Contrôler 70% du marché LS d'ici 2026.</p>
-                        <p><strong>Stratégie :</strong> Augmenter la production de 40% avec de nouveaux laboratoires en LS.</p>
-                    </div>
-                   
-                </div>
-
-                <!-- Image laboratoire -->
-                <div class="operation-image">
-                    <img src="meth2.png" alt="Laboratoire de méthamphétamine">
-                    <div class="image-caption">Laboratoire  - Pureté 98%</div>
-                </div>
+    <!-- Ennemis -->
+    <section id="enemies" class="enemies">
+        <h2>NOS ENNEMIS</h2>
+        <div class="enemies-grid">
+            <div class="enemy-card">
+                <img src="https://i.imgur.com/5J3X9qL.png" alt="Los Herrera">
+                <h3>Los Herrera</h3>
+                <p><strong>Force :</strong> 8/10</p>
+                <p><strong>Faiblesse :</strong> Pas beaucoup de personne.</p>
+                <p><strong>Stratégie :</strong> Attaquer leurs convois d'armes.</p>
+            </div>
+            <div class="enemy-card">
+                <img src="https://i.imgur.com/5J3X9qL.png" alt="La French">
+                <h3>La French</h3>
+                <p><strong>Force :</strong> 9/10</p>
+                <p><strong>Faiblesse :</strong> Trop confiants.</p>
+                <p><strong>Stratégie :</strong> Reprendre leurs labos.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Recrutement -->
+    <section id="recruit" class="recruit">
+        <h2>REJOINDRE EL SILENCIO</h2>
+        <form class="recruit-form">
+            <input type="text" placeholder="Nom" required>
+            <input type="text" placeholder="Âge" required>
+            <textarea placeholder="Pourquoi voulez-vous nous rejoindre ?" required></textarea>
+            <button type="submit">ENVOYER</button>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2023 EL SILENTIO. Tous droits réservés.</p>
+        <p>© 2023 EL SILENCIO. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-    <!-- Bibliothèque html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<!-- Script pour générer le PDF -->
-  <script>
-   document.getElementById('download-pdf').addEventListener('click', function() {
-    // 1. Désactive les éléments problématiques
-    const overlays = document.querySelectorAll('.overlay, .hero .overlay');
-    overlays.forEach(el => el.style.display = 'none');
-
-    // 2. Force les images à avoir un fond blanc
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.style.backgroundColor = 'white';
-        img.style.padding = '5px';
-    });
-
-    // 3. Configuration optimisée
-    const opt = {
-        margin: 10,
-        filename: 'EL_SILENCIO_Organisation.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-            scale: 2,
-            useCORS: true,
-            logging: false,
-            allowTaint: true,
-            backgroundColor: '#FFFFFF', // Fond blanc obligatoire
-            letterRendering: true
-        },
-        jsPDF: {
-            unit: 'mm',
-            format: 'a4',
-            orientation: 'portrait'
-        },
-        pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy'],
-            before: ['#hierarchy', '#vehicles'] // Force les sauts de page avant ces sections
-        }
-    };
-
-    // 4. Génération
-    html2pdf().from(document.body).set(opt).save().then(() => {
-        // 5. Réactive les éléments
-        overlays.forEach(el => el.style.display = '');
-        images.forEach(img => {
-            img.style.backgroundColor = '';
-            img.style.padding = '';
-        });
-    });
-});
-
-    </script>
-
 </body>
 </html>
-
-
-
-

@@ -1,6 +1,6 @@
-// Effet de défilement fluide pour les liens d'ancrage
+// Effet de défilement fluide
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -8,9 +8,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animation au défilement (apparition des sections)
+// Animation au défilement
 const sections = document.querySelectorAll('section');
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -27,7 +26,19 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Effet de grain sur le fond (optionnel)
+// Choix du plan
+const planA = document.getElementById('planA');
+const planB = document.getElementById('planB');
+
+planA.addEventListener('click', () => {
+    alert("Plan A choisi : Économisez, achetez des MK2, vendez-les, puis attaquez les rivaux.");
+});
+
+planB.addEventListener('click', () => {
+    alert("Plan B choisi : Attaquez directement les Herrera et la French pour dominer rapidement.");
+});
+
+// Effet de grain sur le fond
 document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
