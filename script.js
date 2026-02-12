@@ -1,6 +1,6 @@
-// Effet de défilement fluide
+// Effet de défilement fluide pour les liens d'ancrage
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -8,8 +8,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animation au défilement
+// Animation au défilement (apparition des sections)
 const sections = document.querySelectorAll('section');
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -26,21 +27,40 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Choix du plan
-const planA = document.getElementById('planA');
-const planB = document.getElementById('planB');
-
-planA.addEventListener('click', () => {
-    alert("Plan A choisi : Économisez, achetez des MK2, vendez-les, puis attaquez les rivaux.");
-});
-
-planB.addEventListener('click', () => {
-    alert("Plan B choisi : Attaquez directement les Herrera et la French pour dominer rapidement.");
-});
-
-// Effet de grain sur le fond
+// Effet de grain sur le fond (optionnel)
 document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
     document.body.style.backgroundPosition = `${x * 10}px ${y * 10}px`;
+});
+// Ajoutez ceci à votre fichier script.js
+window.addEventListener('beforeprint', function() {
+    // Désactive les effets visuels
+    document.querySelectorAll('*').forEach(el => {
+        el.style.transition = 'none';
+        el.style.boxShadow = 'none';
+        el.style.textShadow = 'none';
+    });
+
+    // Force le fond blanc
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+
+    // Ajuste les sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.background = 'white';
+        section.style.padding = '1rem';
+        section.style.margin = '0';
+    });
+
+    // Désactive les éléments interactifs
+    document.querySelector('.pdf-download').style.display = 'none';
+    document.querySelectorAll('nav a').forEach(a => {
+        a.style.color = 'black';
+    });
+});
+
+window.addEventListener('afterprint', function() {
+    // Réactive les styles normaux
+    location.reload();
 });
