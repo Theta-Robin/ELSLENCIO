@@ -3,12 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL SILANTIO | Famille Criminelle</title>
+    <title>CARTEL CAYO PERICO | Famille Criminelle</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
   <style>
-     
+/* ================================= */
+/* RESET */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0c0c0c;
+    color: #f1f1f1;
+}
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+header h1 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #e10600; /* rouge GTA style */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e10600;
+}
+
+/* ================================= */
+/* SECTIONS */
+/* ================================= */
+
+section {
+    min-height: 100vh;
+    padding: 120px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+section h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: #e10600;
+}
+
+section p {
+    max-width: 900px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+.hero {
+    text-align: center;
+    background: linear-gradient(to bottom, #000, #141414);
+}
+
+.hero h2 {
+    font-size: 60px;
+    letter-spacing: 4px;
+}
+
+/* ================================= */
+/* GRID */
+/* ================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #141414;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #e10600;
+}
+
+/* ================================= */
+/* BUTTON */
+/* ================================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 35px;
+    background: #e10600;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b30000;
+}
+
+/* ================================= */
+/* IMAGES */
+/* ================================= */
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    section {
+        padding: 100px 6%;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+}
+
+/* ================================= */
+/* ================================ */
+/* ========= MODE PDF ============= */
+/* ================================ */
+/* ================================= */
+
+.pdf-mode header {
+    position: relative !important;
+}
+
+.pdf-mode section {
+    display: block !important;
+    min-height: auto !important;
+    height: auto !important;
+    page-break-after: always;
+    break-after: page;
+}
+
+.pdf-mode .grid {
+    display: block !important;
+}
+
+.pdf-mode .card {
+    margin-bottom: 25px;
+}
+
+.pdf-mode * {
+    animation: none !important;
+    transition: none !important;
+}
+/* ================================= */
+/* ========= HIERARCHIE GTA RP ===== */
+/* ================================= */
+
+.hierarchy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+/* Ligne verticale centrale */
+.hierarchy-container::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: 0;
+}
+
+/* Chaque niveau */
+.hierarchy-level {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* Carte membre */
+.hierarchy-card {
+    background: #141414;
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    min-width: 220px;
+    transition: 0.3s;
+}
+
+.hierarchy-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #e10600;
+}
+
+.hierarchy-card span {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.hierarchy-card:hover {
+    transform: translateY(-6px);
+    border-color: #e10600;
+}
+
+/* Chef plus gros */
+.hierarchy-card.leader {
+    padding: 30px 50px;
+    font-size: 20px;
+    background: #1c1c1c;
+    border: 1px solid #e10600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hierarchy-container::before {
+        display: none;
+    }
+
+    .hierarchy-level {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
         .hierarchy {
             text-align: center;
@@ -134,1089 +422,142 @@
             height: 2px;
             background-color: #ccc;
         }
-        /* ===== BASE STYLES ===== */
-:root {
-    --gold: #d4af37;
-    --dark: #0a0a0a;
-    --darker: #050505;
-    --red: #8b0000;
+        /* ===================== */
+/* MODE PDF CORRECTION  */
+/* ===================== */
+
+/* On force cette config lors de l'export */
+/* CSS spécifique pour l'export PDF */
+.pdf-mode {
+    background: #0c0c0c !important;
+    color: #f1f1f1 !important;
 }
 
-body {
-    font-family: 'Cinzel', serif;
-    background-color: var(--dark);
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+.pdf-mode section {
+    page-break-after: always !important;
+    break-after: page !important;
 }
 
-a {
-    color: var(--gold);
-    text-decoration: none;
+.pdf-mode .org-chart-container, .pdf-mode .timeline {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
+.pdf-mode img {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-/* ===== HEADER ===== */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background-color: rgba(10, 10, 10, 0.9);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+.pdf-mode .org-level {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 30px !important;
 }
 
-.logo h1 {
-    font-size: 2rem;
-    margin: 0;
+.pdf-mode .org-node {
+    width: 80% !important;
+    margin: 10px 0 !important;
+    page-break-inside: avoid !important;
 }
-
-.logo span {
-    color: var(--gold);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    transition: color 0.3s;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* ===== HERO SECTION ===== */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('pp.png'); /* Chemin vers votre image locale */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
     position: relative;
-}
-
-
-.hero-content {
-    max-width: 800px;
-    padding: 0 2rem;
-}
-
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-/* ===== STYLES D'IMPRESSION COMPLETS ===== */
-@media print {
-    /* Couleurs de base */
-    body {
-        background-color: white !important;
-        color: black !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Header */
-    header {
-        position: static !important;
-        background-color: white !important;
-        box-shadow: none !important;
-        padding: 10mm !important;
-    }
-
-    .logo h1 {
-        color: black !important;
-    }
-
-    .logo span {
-        color: #333 !important;
-    }
-
-    nav a {
-        color: black !important;
-    }
-
-    /* Sections */
-    section {
-        page-break-after: always !important;
-        break-after: page !important;
-        padding: 10mm !important;
-        margin: 0 !important;
-        min-height: auto !important;
-        background-color: white !important;
-    }
-
-    .hero {
-        height: auto !important;
-        padding: 20mm 0 !important;
-    }
-
-    /* Texte */
-    h1, h2, h3, h4 {
-        color: black !important;
-        page-break-after: avoid !important;
-    }
-
-    /* Timeline */
-    .timeline {
-        display: block !important;
-    }
-
-    .timeline::before {
-        display: none !important;
-    }
-
-    .timeline-item {
-        width: 100% !important;
-        left: 0 !important;
-        page-break-inside: avoid !important;
-    }
-
-    /* Organigramme */
-    .org-chart {
-        display: block !important;
-    }
-
-    .org-level-1, .org-level-2, .org-level-3 {
-        display: block !important;
-        page-break-inside: avoid !important;
-    }
-
-    .org-node {
-        width: 100% !important;
-        margin-bottom: 10mm !important;
-        page-break-inside: avoid !important;
-    }
-
-    /* Images */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-        page-break-inside: avoid !important;
-        background-color: white !important;
-        padding: 2mm !important;
-    }
-
-    /* Opérations */
-    .operation-section {
-        page-break-inside: avoid !important;
-        margin: 10mm 0 !important;
-    }
-
-    .operation-content {
-        flex-direction: column !important;
-    }
-
-    /* Masquer les éléments inutiles */
-    .pdf-download, .map-container, #map {
-        display: none !important;
-    }
-
-    /* Supprimer tous les effets visuels */
-    * {
-        box-shadow: none !important;
-        text-shadow: none !important;
-        background-attachment: scroll !important;
-        transition: none !important;
-        filter: none !important;
-    }
-
-    /* Forcer les couleurs */
-    :root {
-        --gold: #333 !important;
-        --dark: white !important;
-        --darker: white !important;
-    }
-}
-.print-section {
-    page-break-before: always;
-    break-before: page;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--gold);
-    color: var(--dark);
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-}
-
-.cta-button:hover {
-    background-color: white;
-    transform: translateY(-3px);
-}
-
-/* ===== SECTIONS COMMUNES ===== */
-section {
-    padding: 5rem 5%;
-    min-height: 100vh;
+    height: 100vh;
+    background: url('cayo.jpg') center center / cover no-repeat;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    color: #d4af37;
     text-align: center;
-    position: relative;
-    padding-bottom: 0.5rem;
 }
 
-section h2::after {
-    content: '';
+/* Overlay sombre */
+.hero::before {
+    content: "";
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: var(--gold);
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.95) 100%);
+    z-index: 1;
 }
 
-/* ===== HISTOIRE (TIMELINE) ===== */
-.timeline {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: rgba(212, 175, 55, 0.3);
-}
-
-.timeline-item {
-    padding: 1rem 3rem;
-    position: relative;
-    width: 50%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background: var(--gold);
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 3px solid var(--dark);
-}
-
-.timeline-content {
-    background: rgba(20, 20, 20, 0.9);
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-left: 3px solid var(--gold);
-}
-
-.timeline-content h3 {
-    margin-top: 0;
-    color: var(--gold);
-}
-
-.timeline-image {
-    margin: 1rem 0;
-}
-
-.timeline-image img {
+.hero {
+    position: relative;
     width: 100%;
-    border-radius: 5px;
-    border: 1px solid var(--gold);
-}
-
-.timeline-quote {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background: rgba(212, 175, 55, 0.1);
-    border-left: 4px solid var(--gold);
-    font-style: italic;
-}
-
-/* ===== HIÉRARCHIE ===== */
-.org-chart-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.org-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.org-level-1, .org-level-2, .org-level-3 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.org-node {
-    background: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 5px;
-    padding: 1rem;
-    width: 220px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
-}
-
-.org-node:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-}
-
-.node-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.node-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--gold);
-    margin-bottom: 0.5rem;
-}
-
-.org-node h3 {
-    color: var(--gold);
-    margin: 0.5rem 0;
-}
-
-.org-node p {
-    color: #e0e0e0;
-    font-size: 0.9rem;
-    margin: 0.2rem 0;
-}
-
-.flags {
-    display: flex;
-    gap: 0.3rem;
-    margin-top: 0.5rem;
-}
-
-.flags img {
-    width: 18px;
-    height: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ===== OPÉRATIONS ===== */
-.operations {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    height: 100vh; /* plein écran */
+    background: url('cayo.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-}
-
-.operation-section {
-    max-width: 1200px;
-    margin: 3rem auto;
-    background: rgba(20, 20, 20, 0.9);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.operation-section h3 {
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-.operation-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-}
-
-.operation-image {
-    flex: 1;
-    min-width: 300px;
-}
-
-.operation-image img {
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.image-caption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: #aaa;
-}
-
-.operation-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.operation-text p {
-    margin-bottom: 1rem;
-}
-
-.operation-text ul {
-    padding-left: 1.5rem;
-}
-
-.operation-note {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background: rgba(212, 175, 55, 0.1);
-    border-left: 3px solid var(--gold);
-    font-style: italic;
-}
-
-/* Carte */
-.map-container {
-    margin-top: 1.5rem;
-    height: 300px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid var(--gold);
-}
-
-#map {
-    height: 100%;
-}
-
-/* Grille d'armes */
-.weapons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.weapon-card {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    transition: transform 0.3s;
-}
-
-.weapon-card:hover {
-    transform: scale(1.05);
-}
-
-.weapon-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-}
-
-/* Objectifs drogue */
-.drug-objectives {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.drug-card {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 1.5rem;
-    border-radius: 5px;
-    border-left: 4px solid var(--gold);
-}
-
-/* ===== VÉHICULES ===== */
-.vehicles {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-}
-
-.vehicle-gallery {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    max-width: 1000px;
-}
-
-.vehicle-gallery img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 5px;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* ===== RECRUTEMENT ===== */
-.recruit {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-}
-
-.recruit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    width: 100%;
-    background: rgba(20, 20, 20, 0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.recruit-form input,
-.recruit-form textarea {
-    padding: 0.8rem;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    background: rgba(30, 30, 30, 0.8);
-    color: white;
-    border-radius: 5px;
-    font-family: 'Cinzel', serif;
-}
-
-.recruit-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--darker);
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .timeline-item {
-        width: 100%;
-        left: 0 !important;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 0;
-    }
-
-    .operation-content {
-        flex-direction: column;
-    }
-
-    nav ul {
-        gap: 1rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-}
-/* ===== OPÉRATIONS SECTION ===== */
-.operations {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-                url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 5rem 5%;
-}
-
-.operation-section {
-    max-width: 1200px;
-    margin: 3rem auto;
-    background: rgba(20, 20, 20, 0.95);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.operation-section h3 {
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.operation-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background: var(--gold);
-}
-
-.operation-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-}
-
-.operation-image {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
-}
-
-.operation-image img {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
-.operation-image:hover img {
-    transform: scale(1.02);
-}
-
-.image-caption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-.operation-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.operation-text p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
-
-.operation-text ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.operation-text li {
-    margin-bottom: 0.5rem;
-}
-
-/* Carte interactive */
-.map-container {
-    margin: 2rem 0;
-    height: 400px;
-    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-#map {
-    height: 100%;
-    width: 100%;
-}
-
-/* Objectifs armes */
-.objectives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.objective-card {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--gold);
-    transition: transform 0.3s;
-}
-
-.objective-card:hover {
-    transform: translateX(5px);
-}
-
-.objective-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--gold);
-}
-
-.weapons-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.weapon-item {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    transition: all 0.3s;
-}
-
-.weapon-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-}
-
-.weapon-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-}
-
-.weapon-caption {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-/* Objectifs drogue */
-.drug-objectives {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.drug-card {
-    background: rgba(30, 30, 30, 0.8);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-top: 3px solid var(--gold);
-    transition: transform 0.3s;
-}
-
-.drug-card:hover {
-    transform: translateY(-5px);
-}
-
-.drug-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--gold);
-}
-
-/* Image satellite */
-.satellite {
-    margin-top: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .operation-content {
-        flex-direction: column;
-    }
-
-    .map-container {
-        height: 300px;
-    }
-}/* Objectifs Villa - Style amélioré */
-.objectives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin: 30px 0;
-}
-
-.objective-card {
-    background: rgba(20, 20, 20, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.objective-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(212, 175, 55, 0.6);
-}
-
-.objective-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #d4af37;
-    text-align: center;
-}
-
-.objective-card h4 {
-    color: #d4af37;
-    margin-bottom: 15px;
-    font-family: 'Cinzel', serif;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    padding-bottom: 10px;
-}
-
-.objective-card ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.objective-card li {
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.objective-card li:before {
-    content: "•";
-    color: #d4af37;
+/* Zoom léger pour rendre plus massif */
+.hero::before {
+    content: "";
     position: absolute;
-    left: 0;
+    inset: 0;
+    background: url('cayo.jpg') no-repeat center center;
+    background-size: cover;
+    transform: scale(1.1); /* AGRANDIT L'IMAGE */
+    z-index: 0;
 }
 
-.villa-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+/* Overlay sombre */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.3), rgba(0,0,0,0.95));
+    z-index: 1;
 }
 
-.operation-image img {
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    transition: transform 0.3s ease;
+.hero-top,
+.hero-bottom {
+    position: relative;
+    z-index: 2;
 }
 
-.operation-image img:hover {
-    transform: scale(1.03);
+/* Logo plus grand */
+.hero-logo {
+    width: 350px;
+    margin-top: 40px;
 }
 
-.image-caption {
-    text-align: center;
-    margin-top: 10px;
+/* Texte énorme */
+.hero h1 {
+    font-size: 90px;
+    font-weight: 900;
     color: #d4af37;
-    font-size: 0.9rem;
-    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px black;
+    margin-bottom: 40px;
 }
 
-@media print {
-    section {
-        page-break-after: always !important;
-        break-after: page !important;
-        padding: 10mm !important;
-        margin: 0 !important;
-        min-height: auto !important;
-        background-color: var(--dark) !important; /* Conserve le fond noir */
-    }
-
-    .hero {
-        height: auto !important;
-        padding: 20mm 0 !important;
-    }
-
-    /* Autres ajustements */
-    /* ... */
+/* Bouton */
+.cta-button {
+    padding: 18px 50px;
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: 0.3s;
 }
-/* Dans votre fichier style.css */
-@media print {
-    .no-print {
-        display: none !important;
-    }
-    .overlay {
-        display: none !important;
-    }
-}
-/* Styles spécifiques pour l'impression */
-@media print {
-    /* Couleurs de base */
-    body {
-        background-color: #0a0a0a !important;
-        color: #e0e0e0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
 
-    /* Sections */
-    section {
-        page-break-after: always !important;
-        break-after: page !important;
-        padding: 20mm !important;
-        margin: 0 !important;
-        min-height: auto !important;
-        background-color: #0a0a0a !important;
-    }
-
-    /* Hero section */
-    .hero {
-        height: auto !important;
-        padding: 20mm 0 !important;
-        background-color: #0a0a0a !important;
-    }
-
-    /* Timeline */
-    .timeline {
-        display: block !important;
-    }
-
-    .timeline-item {
-        width: 100% !important;
-        left: 0 !important;
-        page-break-inside: avoid !important;
-    }
-
-    .timeline-content {
-        background: rgba(20, 20, 20, 0.9) !important;
-    }
-
-    /* Organigramme */
-    .org-chart {
-        display: block !important;
-    }
-
-    .org-node {
-        width: 100% !important;
-        margin-bottom: 10mm !important;
-        page-break-inside: avoid !important;
-    }
-
-    /* Images */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-        page-break-inside: avoid !important;
-        background-color: #0a0a0a !important;
-        padding: 2mm !important;
-    }
-
-    /* Texte */
-    h1, h2, h3, h4 {
-        color: #d4af37 !important;
-        page-break-after: avoid !important;
-    }
-
-    /* Masquer les éléments inutiles */
-    .pdf-download, .map-container, #map {
-        display: none !important;
-    }
-
-    /* Supprimer tous les effets visuels */
-    * {
-        box-shadow: none !important;
-        text-shadow: none !important;
-        background-attachment: scroll !important;
-        transition: none !important;
-        filter: none !important;
-    }
-
-    /* Forcer les couleurs */
-    :root {
-        --gold: #d4af37 !important;
-        --dark: #0a0a0a !important;
-        --darker: #050505 !important;
-    }
-}
-@media print {
-    .timeline-item {
-        page-break-inside: avoid;
-        margin-bottom: 20mm;
-    }
-    .org-node {
-        page-break-inside: avoid;
-        margin-bottom: 20mm;
-    }
-    .operation-section {
-        page-break-inside: avoid;
-        margin-bottom: 20mm;
-    }
-}
-@media print {
-    .hero {
-        display: block !important;
-        height: auto !important;
-    }
-    .timeline {
-        display: block !important;
-    }
-    .org-chart {
-        display: block !important;
-    }
-    .operation-content {
-        display: block !important;
-    }
-}
-img {
-    max-width: 100% !important;
-    height: auto !important;
-    page-break-inside: avoid !important;
-}
-@media print {
-    body {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    section {
-        display: block !important;
-        page-break-after: always !important;
-    }
+.cta-button:hover {
+    background: #f1c40f;
+    transform: scale(1.08);
 }
 
     </style>
@@ -1224,13 +565,14 @@ img {
     <!-- Header / Navigation -->
     <header>
         <div class="logo">
-            <h1>EL <span>SILANTIO</span></h1>
+            <h1>CARTEL <span>CAYO PERICO</span></h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#history">Histoire</a></li>
                 <li><a href="#hierarchy">Hiérarchie</a></li>
+                <li><a href="#outfits">Tenues</a></li>
                 <li><a href="#vehicles">Véhicules</a></li>
                 <li><a href="#recruit">Rejoindre</a></li>
                 <!-- Bouton pour télécharger en PDF -->
@@ -1243,90 +585,96 @@ img {
 
     <!-- Hero Section (Page d'accueil) -->
     <section id="home" class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h2>LA FAMILLE QUI NE PARLE PAS... MAIS AGIT.</h2>
-            <p>Depuis des décennies, nous contrôlons l'ombre. Rejoignez-nous ou disparaissez.</p>
-            <a href="#recruit" class="cta-button">REJOINDRE</a>
-        </div>
-    </section>
+
+    <div class="hero-top">
+        <img src="fond.png" alt="El Silencio Cartel" class="hero-logo">
+    </div>
+
+    <div class="hero-bottom">
+        <h1>ARRIVE SUR CAYO</h1>
+        <a href="#recruit" class="cta-button">REJOINDRE</a>
+    </div>
+
+</section>
+
 
     <!-- Histoire de la famille -->
     <section id="history" class="history">
-        <h2>NOTRE HISTOIRE</h2>
-
-        <!-- Timeline interactive -->
         <div class="timeline">
-            <!-- Origines -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>LES ORIGINES</h3>
-                    <p>Les deux frères ont perdu leurs parents très jeunes, à l'âge de deux ans, et ont été placés dans un orphelinat à <strong>Alcalá la Real</strong>, un petit village isolé du sud de l'Espagne. Là, ils ont développé une résilience et une débrouillardise remarquables, créant un lien indestructible.</p>
-                </div>
-            </div>
+    <!-- Origines -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>LES ORIGINES</h3>
+            <p>Les deux frères ont perdu leurs parents très jeunes, à l’âge de deux ans.
+Tadeo a été placé dans un orphelinat à Tijuana, une ville frontalière du nord du Mexique.
+Pablo, quant à lui, a été placé dans un orphelinat aux États-Unis, a Los Santos dans une ville américaine.
+Malgré la distance et des environnements différents, ils ont développé une résilience et une débrouillardise remarquables, créant un lien indestructible.</p>
+        </div>
+    </div>
 
-            <!-- L'Oncle -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>L'ARRIVÉE DE L'ONCLE</h3>
-                    <p>À leurs quinze ans, un oncle mystérieux, membre d'une famille espagnole spécialisée dans la méthamphétamine, se présente. Il leur ouvre les portes d'un monde qu'ils ne connaissaient pas : <strong>le crime organisé</strong>.</p>
-                </div>
-            </div>
+    <!-- L'Oncle -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>L'ARRIVÉE DE L'ONCLE</h3>
+            <p>À leurs quinze ans, un oncle mystérieux, membre d'un cartel mexicain spécialisé dans la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄, se présente. Il leur ouvre les portes d'un monde qu'ils ne connaissaient pas : <strong>le crime organisé</strong>.</p>
+        </div>
+    </div>
 
-            <!-- La Formation -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>LA FORMATION</h3>
-                    <p>Pendant dix ans, les frères apprennent à maîtriser la production de méthamphétamine, à établir des réseaux et à affiner leur stratégie. Leur oncle les forme pour devenir des <strong>leaders impitoyables</strong>.</p>
-                </div>
-            </div>
+    <!-- La Formation -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>LA FORMATION</h3>
+            <p>Pendant dix ans, les frères apprennent à maîtriser la production de 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄, à établir des réseaux et à affiner leur stratégie. Leur oncle les forme pour devenir des <strong>leaders impitoyables</strong>.</p>
+        </div>
+    </div>
 
-            <!-- La Prise de Contrôle -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>LA PRISE DE CONTRÔLE</h3>
-                    <p>Au terme de cette décennie, les frères prennent officiellement les rênes d'<strong>El Silantio</strong>, avec la détermination de développer la famille au-delà des frontières espagnoles.</p>
-                </div>
-            </div>
+    <!-- La Prise de Contrôle -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>LA PRISE DE CONTRÔLE</h3>
+            <p>Au terme de cette décennie, les frères prennent officiellement les rênes de <strong>Cartel Cayo Perico</strong>, avec la détermination de développer la famille au-delà des frontières mexicaines.</p>
+        </div>
+    </div>
 
-            <!-- La Trahison -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>LA TRAHISON</h3>
-                    <p>À leur retour en Espagne, le bras droit de leur oncle, jaloux de leur ascension, organise une rébellion. Les frères doivent fuir en urgence vers les <strong>États-Unis</strong>, laissant derrière eux un empire en flammes.</p>
-                </div>
-            </div>
+    <!-- La Trahison -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>LA TRAHISON</h3>
+            <p>À leur retour au Mexique, le bras droit de leur oncle, jaloux de leur ascension, organise une rébellion. Les frères doivent fuir en urgence vers les <strong>États-Unis</strong>, laissant derrière eux un empire en flammes.</p>
+        </div>
+    </div>
 
-            <!-- L'Expansion -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>L'EXPANSION</h3>
-                    <p>Aux États-Unis, El Silantio renaît de ses cendres. Les frères importent leur savoir-faire, consolident leur pouvoir et écrasent leurs rivaux. Leur famille s'étend désormais sur deux continents.</p>
-                </div>
-            </div>
+    <!-- L'Expansion -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>L'EXPANSION</h3>
+            <p>Aux États-Unis, <strong>Cartel Cayo Perico</strong> renaît de ses cendres. Les frères importent leur savoir-faire, consolident leur pouvoir et écrasent leurs rivaux. Leur famille s'étend désormais sur deux continents.</p>
+        </div>
+    </div>
 
-            <!-- L'Objectif Ultime -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>L'OBJECTIF ULTIME</h3>
-                    <p>Leur but ? <strong>Le monopole total</strong> sur le marché de la méthamphétamine aux États-Unis. Une légende est en train de naître, et elle sera <strong>crainte et respectée</strong>.</p>
-                    <div class="timeline-quote">
-                        <p>"Le silence est notre force. La loyauté, notre monnaie. La trahison, notre vengeance."</p>
-                    </div>
-                </div>
+    <!-- L'Objectif Ultime -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>L'OBJECTIF ULTIME</h3>
+            <p>Leur but ? <strong>Le monopole total</strong> sur le marché de la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄 aux États-Unis. Une légende est en train de naître, et elle sera <strong>crainte et respectée</strong>.</p>
+            <div class="timeline-quote">
+                <p>"Le silence est notre force. La loyauté, notre monnaie. La trahison, notre vengeance."</p>
             </div>
         </div>
+    </div>
+</div>
+
     </section>
 
     <!-- Hiérarchie (Organigramme) -->
-   <section id="hierarchy" class="hierarchy">
+ <section id="hierarchy" class="hierarchy">
         <h2>HIÉRARCHIE</h2>
         <div class="org-chart-container">
             <div class="org-chart">
@@ -1340,20 +688,19 @@ img {
                     </div>
                     <div class="org-node leader">
                         <div class="node-content">
-                            <h3>Tonton</h3>
+                            <h3>Pablo Garcial "Tonton"</h3>
                             <p>Parrain (Bras droit)</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Connecteur horizontal entre niveau 1 et 2 -->
-                <div class="org-connector-horizontal"></div>
 
                 <!-- Niveau 2 : Bras droit + Conseiller -->
                 <div class="org-level">
                     <div class="org-node leader">
                         <div class="node-content">
-                            <h3>Lencio</h3>
+                            <h3>Lencio Jimenez</h3>
                             <p>Bras droit</p>
                         </div>
                         <div class="branch"></div>
@@ -1368,7 +715,6 @@ img {
                 </div>
 
                 <!-- Connecteur horizontal entre niveau 2 et 3 -->
-                <div class="org-connector-horizontal"></div>
 
                 <!-- Niveau 3 : HG -->
                 <div class="org-level">
@@ -1395,7 +741,7 @@ img {
                     </div>
                     <div class="org-node underboss">
                         <div class="node-content">
-                            <h3>Lencio Jimenez</h3>
+                            <h3>Elena Sanchez</h3>
                             <p>HG (drogue)</p>
                         </div>
                         <div class="branch"></div>
@@ -1403,7 +749,6 @@ img {
                 </div>
 
                 <!-- Connecteur horizontal entre niveau 3 et 4 -->
-                <div class="org-connector-horizontal"></div>
 
                 <!-- Niveau 4 : Lieutenants -->
                 <div class="org-level">
@@ -1415,7 +760,7 @@ img {
                     </div>
                     <div class="org-node lieutenant">
                         <div class="node-content">
-                            <h3>santiago</h3>
+                            <h3>Santiago Cazorla</h3>
                             <p>Lieutenant (Renseignement)</p>
                         </div>
                     </div>
@@ -1425,40 +770,63 @@ img {
                             <p>Lieutenant</p>
                         </div>
                     </div>
+                    <div class="org-node lieutenant">
+                        <div class="node-content">
+                            <h3>Malik Endersonne</h3>
+                            <p>Lieutenant</p>
+                        </div>
+                    </div>
+                    <div class="org-node lieutenant">
+                        <div class="node-content">
+                            <h3>Leonardo Salazar</h3>
+                            <p>Lieutenant</p>
+                        </div>
+                    </div>
+                    <div class="org-node lieutenant">
+                        <div class="node-content">
+                            <h3>Diego Salazar</h3>
+                            <p>Lieutenant</p>
+                        </div>
+                    </div>
+                    <div class="org-node lieutenant">
+                        <div class="node-content">
+                            <h3>Alejandro Perez</h3>
+                            <p>Lieutenant</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tenues -->
-    <section id="vehicles" class="vehicles">
+<section id="outfits" class="vehicles"> <!-- Tenues -->
         <h2>NOS TENUES</h2>
         <div class="vehicle-gallery">
-            <img src="tenu.png" alt="Tenues de la famille">
-                        <img src="tenuu.png" alt="Tenues de la famille">
+            <img src="tenuecayo.png" alt="Tenues de la famille">
+                        <img src="tenuecartel.png" alt="Tenues de la famille">
 
         </div>
+        
     </section>
 
     <!-- Véhicules -->
     <section id="vehicles" class="vehicles">
         <h2>NOS VÉHICULES</h2>
         <div class="vehicle-gallery">
-            <img src="voitures.png" alt="Véhicules de la famille">
+            <img src="voiturecayo.png" alt="Véhicules de la famille">
             <p>Notre flotte comprend des voitures blindées, des motos et des hélicoptères. Chaque véhicule est équipé pour les missions les plus dangereuses.</p>
         </div>
     </section>
 
-    <!-- Opérations Secrètes -->
-    <section id="operations" class="operations">
+    <!-- <section id="operations" class="operations">
         <h2>OPÉRATIONS SECRÈTES</h2>
 
-        <!-- QG Secret (Villa) -->
         <div class="operation-section">
-            <h3>🏰 NOTRE VILLA ACTUELLE - VILLA EL SILANTIO</h3>
+            <h3>🏰 NOTRE VILLA ACTUELLE - VILLA CARTEL CAYO PERICO</h3>
             <div class="operation-content">
                 <div class="operation-image">
-                    <img src="qg.png" alt="Villa El Silantio - Entrée principale">
+                    <img src="qg.png" alt="Villa Cartel Cayo Perico - Entrée principale">
                     <div class="image-caption">Entrée principale - Île de Majorque</div>
                 </div>
 
@@ -1471,45 +839,41 @@ img {
                         <li><strong>Héliport privé</strong> : Pour les déplacements discrets et rapides</li>
                     </ul>
 
-                    <!-- Carte interactive -->
                     <div class="map-container">
                         <div id="map"></div>
                     </div>
 
-                    <!-- Image satellite -->
                     <div class="operation-image satellite">
-                        <img src="carte.png" alt="Vue satellite de la Villa El Silantio">
+                        <img src="carte.png" alt="Vue satellite de la Villa Cartel Cayo Perico">
                         <div class="image-caption">Vue satellite - Coordonnées classifiées</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Objectifs Villa -->
-            <div class="operation-section">
-                <h3>🏗️ OBJECTIFS DE LA VILLA - VILLA EL SILANTIO</h3>
+            <!-- <div class="operation-section">
+                <h3>🏗️ OBJECTIFS DE LA VILLA - VILLA CARTEL CAYO PERICO</h3>
                 <div class="operation-content">
                     <div class="operation-text">
                         <p>Notre quartier général est <strong>l'épine dorsale de notre famille</strong></p>
 
                         <div class="objectives-grid">
-                            <!-- Objectifs seront ajoutés ici -->
                         </div>
                     </div>
 
-                    <!-- Galerie d'images -->
                     <div class="villa-images">
                         <div class="operation-image">
-                            <img src="reyes.png" alt="Villa El Silantio - Façade principale">
-                            <img src="reye.png" alt="Villa El Silantio - Détails de sécurité">
+                            <img src="reyes.png" alt="Villa Cartel Cayo Perico - Façade principale">
+                            <img src="reye.png" alt="Villa Cartel Cayo Perico - Détails de sécurité">
                             <div class="image-caption">Façade principale - Système de sécurité activé</div>
                         </div>
                         <div class="operation-image">
-                            <img src="villa4.png" alt="Plan satellite de la Villa El Silantio">
+                            <img src="villa4.png" alt="Plan satellite de la Villa Cartel Cayo Perico">
                             <div class="image-caption">Plan satellite - Zone de sécurité (classifié)</div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Objectifs Armes -->
@@ -1542,15 +906,18 @@ img {
                         <div class="objective-card">
                             <div class="objective-icon">🚛</div>
                             <h4>Logistique sécurisée</h4>
-                            <p>Mettre en place de la sécurité sur nos transactions et missions</p>
+
+                            <p>Aller chercher notre revendication ar-74 a la base militaire</p>
+                            <p> evenements tous les deux semaines</p>
+                            <p>une pour les orga et une pour les gang</p>
                         </div>
                     </div>
 
                     <!-- Galerie d'armes -->
                     <div class="weapons-gallery">
                         <div class="weapon-item">
-                            <img src="guz.png" alt="Guzé">
-                            <div class="weapon-caption">Guze</div>
+                            <img src="cayo.png" alt="Guzé">
+                            <div class="weapon-caption">AR74</div>
                         </div>
                     </div>
                 </div>
@@ -1567,7 +934,7 @@ img {
                     <div class="drug-objectives">
                         <div class="drug-card">
                             <div class="drug-icon">🔥</div>
-                            <h4>Méthamphétamine</h4>
+                            <h4> 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄</h4>
                             <p><strong>Objectif :</strong> Contrôler 70% du marché LS d'ici 2026.</p>
                             <p><strong>Stratégie :</strong> Augmenter la production de 40% avec de nouveaux laboratoires en LS.</p>
                         </div>
@@ -1575,7 +942,7 @@ img {
 
                     <!-- Image laboratoire -->
                     <div class="operation-image">
-                        <img src="meth2.png" alt="Laboratoire de méthamphétamine">
+                        <img src="drogue.jpg" alt="Laboratoire de méthamphétamine">
                         <div class="image-caption">Laboratoire - Pureté 98%</div>
                     </div>
                 </div>
@@ -1585,7 +952,7 @@ img {
 
     <!-- Footer -->
     <footer>
-        <p>© 2023 EL SILANTIO. Tous droits réservés.</p>
+        <p>© 2023 CARTEL CAYO PERICO. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
@@ -1593,112 +960,40 @@ img {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <!-- Script pour générer le PDF -->
-    <script>
-        document.getElementById('download-pdf').addEventListener('click', function() {
-            // 1. Désactive les éléments problématiques
-            const overlays = document.querySelectorAll('.overlay, .hero .overlay');
-            overlays.forEach(el => el.style.display = 'none');
+ <script>
+document.getElementById('download-pdf').addEventListener('click', function() {
+    document.body.classList.add("pdf-mode");
 
-            // 2. Force les images à avoir un fond blanc
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.style.backgroundColor = 'white';
-                img.style.padding = '5px';
-            });
+    // Attendre que le mode PDF soit appliqué
+    setTimeout(() => {
+        const opt = {
+            margin: 10,
+            filename: 'CARTEL_CAYO_PERICO_Famille.pdf',
+            image: { type: 'jpeg', quality: 0.95 },
+            html2pdf: {
+                scale: 1.0,
+                useCORS: true,
+                backgroundColor: "#0c0c0c",
+                scrollY: 0,
+                windowWidth: document.body.scrollWidth,
+                windowHeight: document.body.scrollHeight
+            },
+            jsPDF: {
+                unit: 'mm',
+                format: 'a4',
+                orientation: 'portrait'
+            },
+            pagebreak: {
+                mode: ['css']
+            }
+        };
 
-            // 3. Désactive les ombres et effets
-            document.querySelectorAll('*').forEach(el => {
-                el.style.boxShadow = 'none';
-                el.style.transition = 'none';
-            });
-
-            // 4. Configuration optimisée
-            const opt = {
-                margin: 10,
-                filename: 'EL_SILANCIO_Famille.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true,
-                    logging: false,
-                    allowTaint: true,
-                    backgroundColor: '#FFFFFF',
-                    letterRendering: true
-                },
-                jsPDF: {
-                    unit: 'mm',
-                    format: 'a4',
-                    orientation: 'portrait'
-                },
-                pagebreak: {
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: ['#hierarchy', '#vehicles']
-                }
-            };
-
-            // 5. Génération
-            html2pdf().from(document.body).set(opt).save().then(() => {
-                // 6. Réactive les éléments après la conversion
-                overlays.forEach(el => el.style.display = '');
-                images.forEach(img => {
-                    img.style.backgroundColor = '';
-                    img.style.padding = '';
-                });
-            });
+        html2pdf().set(opt).from(document.body).save().then(() => {
+            document.body.classList.remove("pdf-mode");
         });
-        document.getElementById('download-pdf').addEventListener('click', function() {
-    // Désactive les éléments problématiques
-    const overlays = document.querySelectorAll('.overlay, .hero .overlay');
-    overlays.forEach(el => el.style.display = 'none');
-
-    // Force les images à avoir un fond blanc
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.style.backgroundColor = 'white';
-        img.style.padding = '5px';
-    });
-
-    // Désactive les ombres et effets
-    document.querySelectorAll('*').forEach(el => {
-        el.style.boxShadow = 'none';
-        el.style.transition = 'none';
-    });
-
-    // Configuration optimisée
-    const opt = {
-        margin: 10,
-        filename: 'EL_SILANCIO_Famille.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-            scale: 2,
-            useCORS: true,
-            logging: false,
-            allowTaint: true,
-            backgroundColor: null, // Ne pas forcer de couleur de fond
-            letterRendering: true
-        },
-        jsPDF: {
-            unit: 'mm',
-            format: 'a4',
-            orientation: 'portrait'
-        },
-        pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy'],
-            before: ['#hierarchy', '#vehicles']
-        }
-    };
-
-    // Génération
-    html2pdf().from(document.body).set(opt).save().then(() => {
-        // Réactive les éléments après la conversion
-        overlays.forEach(el => el.style.display = '');
-        images.forEach(img => {
-            img.style.backgroundColor = '';
-            img.style.padding = '';
-        });
-    });
+    }, 500);
 });
 
-    </script>
+</script>
 </body>
 </html>
