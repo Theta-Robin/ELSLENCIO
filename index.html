@@ -6,308 +6,247 @@
     <title>CARTEL CAYO PERICO | Famille Criminelle</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-  <style>
-/* ================================= */
-/* RESET */
-/* ================================= */
+       <style>
+        /* ================================= */
+        /* RESET */
+        /* ================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html, body {
-    scroll-behavior: smooth;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0c0c0c;
-    color: #f1f1f1;
-}
+        html, body {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #f1f1f1;
+        }
 
-/* ================================= */
-/* HEADER */
-/* ================================= */
+        /* ================================= */
+        /* HEADER */
+        /* ================================= */
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px 50px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 50px;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
-header h1 {
-    font-size: 18px;
-    letter-spacing: 3px;
-    font-weight: 600;
-    color: #e10600; /* rouge GTA style */
-}
+        header h1 {
+            font-size: 18px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            color: #2e86c1;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-nav a {
-    text-decoration: none;
-    color: #ccc;
-    font-size: 14px;
-    transition: 0.3s;
-}
+        nav a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-nav a:hover {
-    color: #e10600;
-}
+        nav a:hover {
+            color: #2e86c1;
+        }
 
-/* ================================= */
-/* SECTIONS */
-/* ================================= */
+        /* ================================= */
+        /* SECTIONS */
+        /* ================================= */
 
-section {
-    min-height: 100vh;
-    padding: 120px 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
+        section {
+            min-height: 100vh;
+            padding: 120px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
 
-section h2 {
-    font-size: 42px;
-    margin-bottom: 25px;
-    color: #e10600;
-}
+        section h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+            color: #2e86c1;
+        }
 
-section p {
-    max-width: 900px;
-    line-height: 1.7;
-    color: #ddd;
-}
+        section p {
+            max-width: 900px;
+            line-height: 1.7;
+            color: #ddd;
+        }
 
-/* ================================= */
-/* HERO */
-/* ================================= */
+        /* ================================= */
+        /* HERO */
+        /* ================================= */
 
-.hero {
-    text-align: center;
-    background: linear-gradient(to bottom, #000, #141414);
-}
+        .hero {
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a2e, #1a1a2e);
+        }
 
-.hero h2 {
-    font-size: 60px;
-    letter-spacing: 4px;
-}
+        .hero h2 {
+            font-size: 60px;
+            letter-spacing: 4px;
+        }
 
-/* ================================= */
-/* GRID */
-/* ================================= */
+        /* ================================= */
+        /* GRID */
+        /* ================================= */
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-.card {
-    background: #141414;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
+        .card {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
 
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #e10600;
-}
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #2e86c1;
+        }
 
-/* ================================= */
-/* BUTTON */
-/* ================================= */
+        /* ================================= */
+        /* BUTTON */
+        /* ================================= */
 
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 35px;
-    background: #e10600;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: #2e86c1;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-.btn:hover {
-    background: #b30000;
-}
+        .btn:hover {
+            background: #3498db;
+        }
 
-/* ================================= */
-/* IMAGES */
-/* ================================= */
+        /* ================================= */
+        /* IMAGES */
+        /* ================================= */
 
-img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
-}
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-/* ================================= */
-/* RESPONSIVE */
-/* ================================= */
+        /* ================================= */
+        /* RESPONSIVE */
+        /* ================================= */
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    header {
-        padding: 15px 20px;
-    }
+            header {
+                padding: 15px 20px;
+            }
 
-    nav ul {
-        gap: 15px;
-    }
+            nav ul {
+                gap: 15px;
+            }
 
-    section {
-        padding: 100px 6%;
-    }
+            section {
+                padding: 100px 6%;
+            }
 
-    section h2 {
-        font-size: 32px;
-    }
+            section h2 {
+                font-size: 32px;
+            }
 
-    .hero h2 {
-        font-size: 42px;
-    }
-}
+            .hero h2 {
+                font-size: 42px;
+            }
+        }
 
-/* ================================= */
-/* ================================ */
-/* ========= MODE PDF ============= */
-/* ================================ */
-/* ================================= */
+        /* ================================= */
+        /* ================================ */
+        /* ========= MODE PDF ============= */
+        /* ================================ */
+        /* ================================= */
 
-.pdf-mode header {
-    position: relative !important;
-}
+        .pdf-mode header {
+            position: relative !important;
+        }
 
-.pdf-mode section {
-    display: block !important;
-    min-height: auto !important;
-    height: auto !important;
-    page-break-after: always;
-    break-after: page;
-}
+        .pdf-mode section {
+            display: block !important;
+            min-height: auto !important;
+            height: auto !important;
+            page-break-after: always;
+            break-after: page;
+        }
 
-.pdf-mode .grid {
-    display: block !important;
-}
+        .pdf-mode .grid {
+            display: block !important;
+        }
 
-.pdf-mode .card {
-    margin-bottom: 25px;
-}
+        .pdf-mode .card {
+            margin-bottom: 25px;
+        }
 
-.pdf-mode * {
-    animation: none !important;
-    transition: none !important;
-}
-/* ================================= */
-/* ========= HIERARCHIE GTA RP ===== */
-/* ================================= */
+        .pdf-mode * {
+            animation: none !important;
+            transition: none !important;
+        }
 
-.hierarchy-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    margin-top: 50px;
-}
+        /* ================================= */
+        /* ================================ */
+        /* ========= HIERARCHIE GTA RP ===== */
+        /* ================================ */
+        /* ================================= */
 
-/* Ligne verticale centrale */
-.hierarchy-container::before {
-    content: "";
-    position: absolute;
-    width: 3px;
-    height: 100%;
-    background: rgba(255,255,255,0.08);
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    z-index: 0;
-}
+        .hierarchy-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
 
-/* Chaque niveau */
-.hierarchy-level {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-}
-
-/* Carte membre */
-.hierarchy-card {
-    background: #141414;
-    padding: 25px 35px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.05);
-    min-width: 220px;
-    transition: 0.3s;
-}
-
-.hierarchy-card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #e10600;
-}
-
-.hierarchy-card span {
-    font-size: 14px;
-    color: #bbb;
-}
-
-.hierarchy-card:hover {
-    transform: translateY(-6px);
-    border-color: #e10600;
-}
-
-/* Chef plus gros */
-.hierarchy-card.leader {
-    padding: 30px 50px;
-    font-size: 20px;
-    background: #1c1c1c;
-    border: 1px solid #e10600;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hierarchy-container::before {
-        display: none;
-    }
-
-    .hierarchy-level {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        .hierarchy-level {
+            flex-direction: column;
+            align-items: center;
+        }
 
         .hierarchy {
             text-align: center;
             margin: 20px auto;
             max-width: 1200px;
         }
- .hierarchy h3 {
+
+        .hierarchy h3 {
             color: #a62121;
             margin-bottom: 30px;
             font-size: 2em;
         }
+
         .hierarchy h2 {
             color: #a62121;
             margin-bottom: 30px;
@@ -348,23 +287,23 @@ img {
         }
 
         .leader {
-            background-color: #d4af37; /* Or pour les parrains */
+            background-color: #d4af37;
             color: white;
             font-weight: bold;
         }
 
         .underboss {
-            background-color: #4682b4; /* Bleu acier pour les HG */
+            background-color: #4682b4;
             color: white;
         }
 
         .lieutenant {
-            background-color: #50c878; /* Vert émeraude pour les lieutenants */
+            background-color: #50c878;
             color: white;
         }
 
         .conseiller {
-            background-color: #800020; /* Bordeaux pour le conseiller */
+            background-color: #800020;
             color: white;
         }
 
@@ -422,145 +361,294 @@ img {
             height: 2px;
             background-color: #ccc;
         }
-        /* ===================== */
-/* MODE PDF CORRECTION  */
-/* ===================== */
 
-/* On force cette config lors de l'export */
-/* CSS spécifique pour l'export PDF */
+        /* ===================== */
+        /* MODE PDF CORRECTION  */
+        /* ===================== */
+
+        /* On force cette config lors de l'export */
+        /* CSS spécifique pour l'export PDF */
+        .pdf-mode {
+            background: #1a1a2e !important;
+            color: #f1f1f1 !important;
+        }
+
+        .pdf-mode section {
+            page-break-after: always !important;
+            break-after: page !important;
+        }
+
+        .pdf-mode .org-chart-container, .pdf-mode .timeline {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .pdf-mode img {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .pdf-mode .org-level {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin-bottom: 30px !important;
+        }
+
+        .pdf-mode .org-node {
+            width: 80% !important;
+            margin: 10px 0 !important;
+            page-break-inside: avoid !important;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('cayo.jpg') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        /* Overlay sombre */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.95) 100%);
+            z-index: 1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('cayo.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Zoom léger pour rendre plus massif */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('cayo.jpg') no-repeat center center;
+            background-size: cover;
+            transform: scale(1.1);
+            z-index: 0;
+        }
+
+        /* Overlay sombre */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.3), rgba(0,0,0,0.95));
+            z-index: 1;
+        }
+
+        .hero-top,
+        .hero-bottom {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Logo plus grand */
+        .hero-logo {
+            width: 350px;
+            margin-top: 40px;
+        }
+
+        /* Texte énorme */
+        .hero h1 {
+            font-size: 90px;
+            font-weight: 900;
+            color: #d4af37;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px black;
+            margin-bottom: 40px;
+        }
+
+        /* Bouton */
+        .cta-button {
+            padding: 18px 50px;
+            background: #d4af37;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #f1c40f;
+            transform: scale(1.08);
+        }
+        /* ================================= */
+/* STYLES SPECIFIQUES POUR LE MODE PDF */
+/* ================================= */
+
 .pdf-mode {
-    background: #0c0c0c !important;
+    background: #1a1a2e !important;
     color: #f1f1f1 !important;
 }
 
+/* Styles pour les sections */
 .pdf-mode section {
     page-break-after: always !important;
     break-after: page !important;
+    display: block !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 20px !important;
 }
 
-.pdf-mode .org-chart-container, .pdf-mode .timeline {
-    width: 100% !important;
-    max-width: 100% !important;
+/* Styles pour les titres */
+.pdf-mode h1, .pdf-mode h2, .pdf-mode h3, .pdf-mode h4, .pdf-mode h5, .pdf-mode h6 {
+    color: #2e86c1 !important;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
 }
 
+/* Styles pour les paragraphes */
+.pdf-mode p {
+    color: #ddd !important;
+    line-height: 1.7 !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: 400 !important;
+}
+
+/* Styles pour les liens */
+.pdf-mode a {
+    color: #2e86c1 !important;
+    text-decoration: none !important;
+}
+
+/* Styles pour les images */
 .pdf-mode img {
     max-width: 100% !important;
     height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
-.pdf-mode .org-level {
+/* Styles pour les cartes */
+.pdf-mode .card {
+    margin-bottom: 25px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Styles pour la hiérarchie */
+.pdf-mode .hierarchy-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    margin-bottom: 30px !important;
+    gap: 60px !important;
+    margin-top: 50px !important;
 }
 
-.pdf-mode .org-node {
-    width: 80% !important;
-    margin: 10px 0 !important;
-    page-break-inside: avoid !important;
-}
-.hero {
-    position: relative;
-    height: 100vh;
-    background: url('cayo.jpg') center center / cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: #d4af37;
-    text-align: center;
+/* Styles pour les éléments de la hiérarchie */
+.pdf-mode .hierarchy-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    margin: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Overlay sombre */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.95) 100%);
-    z-index: 1;
+/* Styles pour le footer */
+.pdf-mode footer {
+    background-color: #1a1a2e !important;
+    padding: 20px !important;
+    text-align: center !important;
+    color: #ddd !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Styles pour le header */
+.pdf-mode header {
+    position: relative !important;
+    background: rgba(26, 26, 46, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* plein écran */
-    background: url('cayo.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
+/* Styles pour les éléments de navigation */
+.pdf-mode nav ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 30px !important;
+    justify-content: center !important;
 }
 
-/* Zoom léger pour rendre plus massif */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('cayo.jpg') no-repeat center center;
-    background-size: cover;
-    transform: scale(1.1); /* AGRANDIT L'IMAGE */
-    z-index: 0;
+/* Styles pour les éléments de navigation */
+.pdf-mode nav a {
+    text-decoration: none !important;
+    color: #ccc !important;
+    font-size: 14px !important;
+    transition: 0.3s !important;
 }
 
-/* Overlay sombre */
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.3), rgba(0,0,0,0.95));
-    z-index: 1;
+/* Styles pour les éléments de navigation au survol */
+.pdf-mode nav a:hover {
+    color: #2e86c1 !important;
 }
 
-.hero-top,
-.hero-bottom {
-    position: relative;
-    z-index: 2;
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid {
+    display: block !important;
 }
 
-/* Logo plus grand */
-.hero-logo {
-    width: 350px;
-    margin-top: 40px;
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item {
+    margin-bottom: 25px !important;
 }
 
-/* Texte énorme */
-.hero h1 {
-    font-size: 90px;
-    font-weight: 900;
-    color: #d4af37;
-    text-transform: uppercase;
-    text-shadow: 0 0 25px black;
-    margin-bottom: 40px;
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
-/* Bouton */
-.cta-button {
-    padding: 18px 50px;
-    background: #d4af37;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 18px;
-    transition: 0.3s;
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item p {
+    max-width: 900px !important;
+    line-height: 1.7 !important;
+    color: #ddd !important;
 }
 
-.cta-button:hover {
-    background: #f1c40f;
-    transform: scale(1.08);
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item h2 {
+    font-size: 42px !important;
+    margin-bottom: 25px !important;
+    color: #2e86c1 !important;
 }
 
     </style>
+</head>
 <body>
     <!-- Header / Navigation -->
     <header>
@@ -585,96 +673,64 @@ img {
 
     <!-- Hero Section (Page d'accueil) -->
     <section id="home" class="hero">
-
-    <div class="hero-top">
-        <img src="fond.png" alt="El Silencio Cartel" class="hero-logo">
-    </div>
-
-    <div class="hero-bottom">
-        <h1>ARRIVE SUR CAYO</h1>
-        <a href="#recruit" class="cta-button">REJOINDRE</a>
-    </div>
-
-</section>
-
+        <div class="hero-top">
+            <img src="fond.png" alt="El Silencio Cartel" class="hero-logo">
+        </div>
+        <div class="hero-bottom">
+            <h1>ARRIVE SUR CAYO</h1>
+            <a href="#recruit" class="cta-button">REJOINDRE</a>
+        </div>
+    </section>
 
     <!-- Histoire de la famille -->
     <section id="history" class="history">
         <div class="timeline">
-    <!-- Origines -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LES ORIGINES</h3>
-            <p>Les deux frères ont perdu leurs parents très jeunes, à l’âge de deux ans.
+            <!-- Origines -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>LES ORIGINES</h3>
+                    <p>Les deux frères ont perdu leurs parents très jeunes, à l'âge de deux ans.
 Tadeo a été placé dans un orphelinat à Tijuana, une ville frontalière du nord du Mexique.
 Pablo, quant à lui, a été placé dans un orphelinat aux États-Unis, a Los Santos dans une ville américaine.
 Malgré la distance et des environnements différents, ils ont développé une résilience et une débrouillardise remarquables, créant un lien indestructible.</p>
-        </div>
-    </div>
+                </div>
+            </div>
 
-    <!-- L'Oncle -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'ARRIVÉE DE L'ONCLE</h3>
-            <p>À leurs quinze ans, un oncle mystérieux, membre d'un cartel mexicain spécialisé dans la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄, se présente. Il leur ouvre les portes d'un monde qu'ils ne connaissaient pas : <strong>le crime organisé</strong>.</p>
-        </div>
-    </div>
+            <!-- L'Oncle -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>L'ARRIVÉE DE L'ONCLE</h3>
+                    <p>À leurs quinze ans, un oncle mystérieux, membre d'un cartel mexicain spécialisé dans la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄, se présente. Il leur ouvre les portes d'un monde qu'ils ne connaissaient pas : <strong>le crime organisé</strong>.</p>
+                </div>
+            </div>
 
-    <!-- La Formation -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA FORMATION</h3>
-            <p>Pendant dix ans, les frères apprennent à maîtriser la production de 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄, à établir des réseaux et à affiner leur stratégie. Leur oncle les forme pour devenir des <strong>leaders impitoyables</strong>.</p>
-        </div>
-    </div>
+            <!-- L'Expansion -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>L'EXPANSION</h3>
+                    <p>Aux États-Unis, <strong>Cartel Cayo Perico</strong> renaît de ses cendres. Les frères importent leur savoir-faire, consolident leur pouvoir et écrasent leurs rivaux. Leur famille s'étend désormais sur deux continents.</p>
+                </div>
+            </div>
 
-    <!-- La Prise de Contrôle -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA PRISE DE CONTRÔLE</h3>
-            <p>Au terme de cette décennie, les frères prennent officiellement les rênes de <strong>Cartel Cayo Perico</strong>, avec la détermination de développer la famille au-delà des frontières mexicaines.</p>
-        </div>
-    </div>
-
-    <!-- La Trahison -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>LA TRAHISON</h3>
-            <p>À leur retour au Mexique, le bras droit de leur oncle, jaloux de leur ascension, organise une rébellion. Les frères doivent fuir en urgence vers les <strong>États-Unis</strong>, laissant derrière eux un empire en flammes.</p>
-        </div>
-    </div>
-
-    <!-- L'Expansion -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'EXPANSION</h3>
-            <p>Aux États-Unis, <strong>Cartel Cayo Perico</strong> renaît de ses cendres. Les frères importent leur savoir-faire, consolident leur pouvoir et écrasent leurs rivaux. Leur famille s'étend désormais sur deux continents.</p>
-        </div>
-    </div>
-
-    <!-- L'Objectif Ultime -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-            <h3>L'OBJECTIF ULTIME</h3>
-            <p>Leur but ? <strong>Le monopole total</strong> sur le marché de la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄 aux États-Unis. Une légende est en train de naître, et elle sera <strong>crainte et respectée</strong>.</p>
-            <div class="timeline-quote">
-                <p>"Le silence est notre force. La loyauté, notre monnaie. La trahison, notre vengeance."</p>
+            <!-- L'Objectif Ultime -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>L'OBJECTIF ULTIME</h3>
+                    <p>Leur but ? <strong>Le monopole total</strong> sur le marché de la 𝐃𝐈𝐀𝐌𝐎𝐍𝐃  𝐂𝐎𝐊𝐄 aux États-Unis. Une légende est en train de naître, et elle sera <strong>crainte et respectée</strong>.</p>
+                    <div class="timeline-quote">
+                        <p>"Le silence est notre force. La loyauté, notre monnaie. La trahison, notre vengeance."</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
     </section>
 
     <!-- Hiérarchie (Organigramme) -->
- <section id="hierarchy" class="hierarchy">
+    <section id="hierarchy" class="hierarchy">
         <h2>HIÉRARCHIE</h2>
         <div class="org-chart-container">
             <div class="org-chart">
@@ -695,8 +751,10 @@ Malgré la distance et des environnements différents, ils ont développé une r
                 </div>
 
                 <!-- Connecteur horizontal entre niveau 1 et 2 -->
+                <div class="org-connector-horizontal"></div>
 
-                <!-- Niveau 2 : Bras droit + Conseiller -->
+                <!-- Niveau 2 : Conseiller -->
+               <!-- Niveau 2 : Bras droit + Conseiller -->
                 <div class="org-level">
                     <div class="org-node leader">
                         <div class="node-content">
@@ -715,6 +773,7 @@ Malgré la distance et des environnements différents, ils ont développé une r
                 </div>
 
                 <!-- Connecteur horizontal entre niveau 2 et 3 -->
+                <div class="org-connector-horizontal"></div>
 
                 <!-- Niveau 3 : HG -->
                 <div class="org-level">
@@ -748,7 +807,9 @@ Malgré la distance et des environnements différents, ils ont développé une r
                     </div>
                 </div>
 
+
                 <!-- Connecteur horizontal entre niveau 3 et 4 -->
+                <div class="org-connector-horizontal"></div>
 
                 <!-- Niveau 4 : Lieutenants -->
                 <div class="org-level">
@@ -800,14 +861,12 @@ Malgré la distance et des environnements différents, ils ont développé une r
     </section>
 
     <!-- Tenues -->
-<section id="outfits" class="vehicles"> <!-- Tenues -->
+    <section id="outfits" class="vehicles">
         <h2>NOS TENUES</h2>
         <div class="vehicle-gallery">
-            <img src="tenuecayo.png" alt="Tenues de la famille">
-                        <img src="tenuecartel.png" alt="Tenues de la famille">
-
+            <img src="tenuecayo.png" alt="Tenues de la famille" style="width: 80%; border: 5px solid #f1c40f; box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);">
+            <img src="tenuecartel.png" alt="Tenues de la famille">
         </div>
-        
     </section>
 
     <!-- Véhicules -->
@@ -819,62 +878,9 @@ Malgré la distance et des environnements différents, ils ont développé une r
         </div>
     </section>
 
-    <!-- <section id="operations" class="operations">
+    <!-- Opérations -->
+    <section id="operations" class="operations">
         <h2>OPÉRATIONS SECRÈTES</h2>
-
-        <div class="operation-section">
-            <h3>🏰 NOTRE VILLA ACTUELLE - VILLA CARTEL CAYO PERICO</h3>
-            <div class="operation-content">
-                <div class="operation-image">
-                    <img src="qg.png" alt="Villa Cartel Cayo Perico - Entrée principale">
-                    <div class="image-caption">Entrée principale - Île de Majorque</div>
-                </div>
-
-                <div class="operation-text">
-                    <p>Notre quartier général est une <strong>forteresse impénétrable</strong> située sur LS dans le sud de la ville:</p>
-                    <ul>
-                        <li><strong>Sécurité maximale</strong> : Caméras 4K</li>
-                        <li><strong>Salle des opérations</strong> : Tableau tactique</li>
-                        <li><strong>Garage blindé</strong></li>
-                        <li><strong>Héliport privé</strong> : Pour les déplacements discrets et rapides</li>
-                    </ul>
-
-                    <div class="map-container">
-                        <div id="map"></div>
-                    </div>
-
-                    <div class="operation-image satellite">
-                        <img src="carte.png" alt="Vue satellite de la Villa Cartel Cayo Perico">
-                        <div class="image-caption">Vue satellite - Coordonnées classifiées</div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Objectifs Villa -->
-            <!-- <div class="operation-section">
-                <h3>🏗️ OBJECTIFS DE LA VILLA - VILLA CARTEL CAYO PERICO</h3>
-                <div class="operation-content">
-                    <div class="operation-text">
-                        <p>Notre quartier général est <strong>l'épine dorsale de notre famille</strong></p>
-
-                        <div class="objectives-grid">
-                        </div>
-                    </div>
-
-                    <div class="villa-images">
-                        <div class="operation-image">
-                            <img src="reyes.png" alt="Villa Cartel Cayo Perico - Façade principale">
-                            <img src="reye.png" alt="Villa Cartel Cayo Perico - Détails de sécurité">
-                            <div class="image-caption">Façade principale - Système de sécurité activé</div>
-                        </div>
-                        <div class="operation-image">
-                            <img src="villa4.png" alt="Plan satellite de la Villa Cartel Cayo Perico">
-                            <div class="image-caption">Plan satellite - Zone de sécurité (classifié)</div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
 
         <!-- Objectifs Armes -->
         <div class="operation-section">
@@ -882,7 +888,6 @@ Malgré la distance et des environnements différents, ils ont développé une r
             <div class="operation-content">
                 <div class="operation-text">
                     <p>Notre arsenal est <strong>la clé de notre domination</strong>. Voici nos objectifs pour les 12 prochains mois :</p>
-
                     <div class="objectives-grid">
                         <div class="objective-card">
                             <div class="objective-icon">🎯</div>
@@ -906,9 +911,8 @@ Malgré la distance et des environnements différents, ils ont développé une r
                         <div class="objective-card">
                             <div class="objective-icon">🚛</div>
                             <h4>Logistique sécurisée</h4>
-
                             <p>Aller chercher notre revendication ar-74 a la base militaire</p>
-                            <p> evenements tous les deux semaines</p>
+                            <p>evenements tous les deux semaines</p>
                             <p>une pour les orga et une pour les gang</p>
                         </div>
                     </div>
@@ -930,7 +934,6 @@ Malgré la distance et des environnements différents, ils ont développé une r
             <div class="operation-content">
                 <div class="operation-text">
                     <p>Notre empire repose sur <strong>trois piliers indestructibles</strong>. Voici nos objectifs pour dominer le marché :</p>
-
                     <div class="drug-objectives">
                         <div class="drug-card">
                             <div class="drug-icon">🔥</div>
@@ -960,40 +963,38 @@ Malgré la distance et des environnements différents, ils ont développé une r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <!-- Script pour générer le PDF -->
- <script>
-document.getElementById('download-pdf').addEventListener('click', function() {
-    document.body.classList.add("pdf-mode");
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            document.body.classList.add("pdf-mode");
+            // Attendre que le mode PDF soit appliqué
+            setTimeout(() => {
+                const opt = {
+                    margin: 10,
+                    filename: 'CARTEL_CAYO_PERICO_Famille.pdf',
+                    image: { type: 'jpeg', quality: 0.95 },
+                    html2pdf: {
+                        scale: 1.0,
+                        useCORS: true,
+                        backgroundColor: "#1a1a2e",
+                        scrollY: 0,
+                        windowWidth: document.body.scrollWidth,
+                        windowHeight: document.body.scrollHeight
+                    },
+                    jsPDF: {
+                        unit: 'mm',
+                        format: 'a4',
+                        orientation: 'portrait'
+                    },
+                    pagebreak: {
+                        mode: ['css']
+                    }
+                };
 
-    // Attendre que le mode PDF soit appliqué
-    setTimeout(() => {
-        const opt = {
-            margin: 10,
-            filename: 'CARTEL_CAYO_PERICO_Famille.pdf',
-            image: { type: 'jpeg', quality: 0.95 },
-            html2pdf: {
-                scale: 1.0,
-                useCORS: true,
-                backgroundColor: "#0c0c0c",
-                scrollY: 0,
-                windowWidth: document.body.scrollWidth,
-                windowHeight: document.body.scrollHeight
-            },
-            jsPDF: {
-                unit: 'mm',
-                format: 'a4',
-                orientation: 'portrait'
-            },
-            pagebreak: {
-                mode: ['css']
-            }
-        };
-
-        html2pdf().set(opt).from(document.body).save().then(() => {
-            document.body.classList.remove("pdf-mode");
+                html2pdf().set(opt).from(document.body).save().then(() => {
+                    document.body.classList.remove("pdf-mode");
+                });
+            }, 500);
         });
-    }, 500);
-});
-
-</script>
+    </script>
 </body>
 </html>
