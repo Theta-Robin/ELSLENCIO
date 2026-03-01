@@ -10,6 +10,67 @@
         /* ================================= */
         /* RESET */
         /* ================================= */
+/* Styles pour la galerie d'armes */
+.weapons-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.weapon-item {
+    background: #2a2a46;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f1c40f;
+    transition: transform 0.3s ease;
+}
+
+.weapon-item:hover {
+    transform: scale(1.05);
+}
+
+.weapon-item img {
+    width: 100%;
+    height: 350px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Pour maintenir les proportions */
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.weapon-item:hover img {
+    transform: scale(1.05);
+}
+
+.weapon-caption {
+    text-align: center;
+    margin-top: 10px;
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .weapons-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .weapon-item img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weapons-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .weapon-item img {
+        height: 200px;
+    }
+}
 
         * {
             margin: 0;
@@ -940,3 +1001,4 @@ Malgré la distance et des environnements différents, ils ont développé une r
     </script>
 </body>
 </html>
+
