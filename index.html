@@ -6,7 +6,7 @@
     <title>CARTEL CAYO PERICO | Famille Criminelle</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-        <style>
+       <style>
         /* ================================= */
         /* RESET */
         /* ================================= */
@@ -67,83 +67,159 @@
         }
 
         /* ================================= */
-        /* HERO SECTION */
-        /* ================================= */
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 30px;
-            padding: 0 50px;
-        }
-
-        .hero img {
-            max-width: 800px;
-            width: 100%;
-            height: auto;
-            border: 10px solid gold;
-            border-radius: 10px;
-        }
-
-        .hero h1 {
-            font-size: 80px;
-            color: gold;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .hero a {
-            font-size: 20px;
-            font-weight: 600;
-            background: gold;
-            color: #1a1a2e;
-            padding: 15px 30px;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-
-        .hero a:hover {
-            background: #2e86c1;
-            color: white;
-        }
-
-        /* ================================= */
         /* SECTIONS */
         /* ================================= */
 
         section {
             min-height: 100vh;
-            padding: 100px 50px;
+            padding: 120px 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 30px;
+            position: relative;
         }
 
         section h2 {
             font-size: 42px;
             margin-bottom: 25px;
             color: #2e86c1;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
         }
 
         section p {
             max-width: 900px;
             line-height: 1.7;
             color: #ddd;
-            font-family: 'Cinzel', serif;
-            font-weight: 400;
         }
 
         /* ================================= */
-        /* HIERARCHIE */
+        /* HERO */
+        /* ================================= */
+
+        .hero {
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a2e, #1a1a2e);
+        }
+
+        .hero h2 {
+            font-size: 60px;
+            letter-spacing: 4px;
+        }
+
+        /* ================================= */
+        /* GRID */
+        /* ================================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #2e86c1;
+        }
+
+        /* ================================= */
+        /* BUTTON */
+        /* ================================= */
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: #2e86c1;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3498db;
+        }
+
+        /* ================================= */
+        /* IMAGES */
+        /* ================================= */
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* ================================= */
+        /* RESPONSIVE */
+        /* ================================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            section {
+                padding: 100px 6%;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 42px;
+            }
+        }
+
+        /* ================================= */
+        /* ================================ */
+        /* ========= MODE PDF ============= */
+        /* ================================ */
+        /* ================================= */
+
+        .pdf-mode header {
+            position: relative !important;
+        }
+
+        .pdf-mode section {
+            display: block !important;
+            min-height: auto !important;
+            height: auto !important;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .pdf-mode .grid {
+            display: block !important;
+        }
+
+        .pdf-mode .card {
+            margin-bottom: 25px;
+        }
+
+        .pdf-mode * {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        /* ================================= */
+        /* ================================ */
+        /* ========= HIERARCHIE GTA RP ===== */
+        /* ================================ */
         /* ================================= */
 
         .hierarchy-container {
@@ -154,59 +230,144 @@
             margin-top: 50px;
         }
 
-        .hierarchy-item {
-            background: rgba(255, 255, 255, 0.1);
+        .hierarchy-level {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hierarchy {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .hierarchy h3 {
+            color: #a62121;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .hierarchy h2 {
+            color: #a62121;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .org-chart-container {
+            background-color: rgb(0, 0, 0);
             border-radius: 10px;
             padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* ================================= */
-        /* GRID */
-        /* ================================= */
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .grid-item {
-            margin-bottom: 25px;
+        /* Niveaux de l'organigramme */
+        .org-level {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
         }
 
-        .grid-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .grid-item h2 {
-            font-size: 42px;
-            margin-bottom: 25px;
-            color: #2e86c1;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        /* ================================= */
-        /* FOOTER */
-        /* ================================= */
-
-        footer {
-            background-color: #1a1a2e;
-            padding: 20px;
+        /* Nœuds */
+        .org-node {
+            position: relative;
+            margin: 0 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
             text-align: center;
-            color: #ddd;
         }
 
-        /* ================================= */
-        /* STYLES SPECIFIQUES POUR LE MODE PDF */
-        /* ================================= */
+        .leader {
+            background-color: #d4af37;
+            color: white;
+            font-weight: bold;
+        }
 
+        .underboss {
+            background-color: #4682b4;
+            color: white;
+        }
+
+        .lieutenant {
+            background-color: #50c878;
+            color: white;
+        }
+
+        .conseiller {
+            background-color: #800020;
+            color: white;
+        }
+
+        .node-content h3 {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .node-content p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+        }
+
+        /* Connecteurs entre niveaux */
+        .org-connector {
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        .org-connector::before {
+            content: '';
+            width: 2px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .org-connector-horizontal {
+            display: flex;
+            justify-content: center;
+            height: 2px;
+            background-color: #ccc;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Branches verticales */
+        .branch {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: #ccc;
+        }
+
+        .branch::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            width: 22px;
+            height: 2px;
+            background-color: #ccc;
+        }
+
+        /* ===================== */
+        /* MODE PDF CORRECTION  */
+        /* ===================== */
+
+        /* On force cette config lors de l'export */
+        /* CSS spécifique pour l'export PDF */
         .pdf-mode {
             background: #1a1a2e !important;
             color: #f1f1f1 !important;
@@ -215,122 +376,277 @@
         .pdf-mode section {
             page-break-after: always !important;
             break-after: page !important;
-            display: block !important;
-            min-height: auto !important;
-            height: auto !important;
-            padding: 20px !important;
         }
 
-        .pdf-mode h1, .pdf-mode h2, .pdf-mode h3, .pdf-mode h4, .pdf-mode h5, .pdf-mode h6 {
-            color: #2e86c1 !important;
-            font-family: 'Playfair Display', serif !important;
-            font-weight: 700 !important;
-        }
-
-        .pdf-mode p {
-            color: #ddd !important;
-            line-height: 1.7 !important;
-            font-family: 'Cinzel', serif !important;
-            font-weight: 400 !important;
-        }
-
-        .pdf-mode a {
-            color: #2e86c1 !important;
-            text-decoration: none !important;
+        .pdf-mode .org-chart-container, .pdf-mode .timeline {
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         .pdf-mode img {
             max-width: 100% !important;
             height: auto !important;
-            display: block !important;
-            margin: 0 auto !important;
         }
 
-        .pdf-mode .card {
-            margin-bottom: 25px !important;
-            border-radius: 10px !important;
-            background: rgba(255, 255, 255, 0.1) !important;
-            padding: 20px !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .pdf-mode .hierarchy-container {
+        .pdf-mode .org-level {
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            gap: 60px !important;
-            margin-top: 50px !important;
+            margin-bottom: 30px !important;
         }
 
-        .pdf-mode .hierarchy-item {
-            background: rgba(255, 255, 255, 0.1) !important;
-            border-radius: 10px !important;
-            padding: 20px !important;
-            margin: 10px !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        .pdf-mode .org-node {
+            width: 80% !important;
+            margin: 10px 0 !important;
+            page-break-inside: avoid !important;
         }
 
-        .pdf-mode footer {
-            background-color: #1a1a2e !important;
-            padding: 20px !important;
-            text-align: center !important;
-            color: #ddd !important;
-            position: fixed !important;
-            bottom: 0 !important;
-            width: 100% !important;
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('cayo.jpg') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: #d4af37;
+            text-align: center;
         }
 
-        .pdf-mode header {
-            position: relative !important;
-            background: rgba(26, 26, 46, 0.95) !important;
-            backdrop-filter: blur(8px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        /* Overlay sombre */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.95) 100%);
+            z-index: 1;
         }
 
-        .pdf-mode nav ul {
-            display: flex !important;
-            list-style: none !important;
-            gap: 30px !important;
-            justify-content: center !important;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .pdf-mode nav a {
-            text-decoration: none !important;
-            color: #ccc !important;
-            font-size: 14px !important;
-            transition: 0.3s !important;
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('cayo.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
         }
 
-        .pdf-mode nav a:hover {
-            color: #2e86c1 !important;
+        /* Zoom léger pour rendre plus massif */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('cayo.jpg') no-repeat center center;
+            background-size: cover;
+            transform: scale(1.1);
+            z-index: 0;
         }
 
-        .pdf-mode .grid {
-            display: block !important;
+        /* Overlay sombre */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.3), rgba(0,0,0,0.95));
+            z-index: 1;
         }
 
-        .pdf-mode .grid-item {
-            margin-bottom: 25px !important;
+        .hero-top,
+        .hero-bottom {
+            position: relative;
+            z-index: 2;
         }
 
-        .pdf-mode .grid-item img {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block !important;
-            margin: 0 auto !important;
+        /* Logo plus grand */
+        .hero-logo {
+            width: 350px;
+            margin-top: 40px;
         }
 
-        .pdf-mode .grid-item p {
-            max-width: 900px !important;
-            line-height: 1.7 !important;
-            color: #ddd !important;
+        /* Texte énorme */
+        .hero h1 {
+            font-size: 90px;
+            font-weight: 900;
+            color: #d4af37;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px black;
+            margin-bottom: 40px;
         }
 
-        .pdf-mode .grid-item h2 {
-            font-size: 42px !important;
-            margin-bottom: 25px !important;
-            color: #2e86c1 !important;
+        /* Bouton */
+        .cta-button {
+            padding: 18px 50px;
+            background: #d4af37;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 18px;
+            transition: 0.3s;
         }
+
+        .cta-button:hover {
+            background: #f1c40f;
+            transform: scale(1.08);
+        }
+        /* ================================= */
+/* STYLES SPECIFIQUES POUR LE MODE PDF */
+/* ================================= */
+
+.pdf-mode {
+    background: #1a1a2e !important;
+    color: #f1f1f1 !important;
+}
+
+/* Styles pour les sections */
+.pdf-mode section {
+    page-break-after: always !important;
+    break-after: page !important;
+    display: block !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 20px !important;
+}
+
+/* Styles pour les titres */
+.pdf-mode h1, .pdf-mode h2, .pdf-mode h3, .pdf-mode h4, .pdf-mode h5, .pdf-mode h6 {
+    color: #2e86c1 !important;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+}
+
+/* Styles pour les paragraphes */
+.pdf-mode p {
+    color: #ddd !important;
+    line-height: 1.7 !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: 400 !important;
+}
+
+/* Styles pour les liens */
+.pdf-mode a {
+    color: #2e86c1 !important;
+    text-decoration: none !important;
+}
+
+/* Styles pour les images */
+.pdf-mode img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Styles pour les cartes */
+.pdf-mode .card {
+    margin-bottom: 25px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Styles pour la hiérarchie */
+.pdf-mode .hierarchy-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 60px !important;
+    margin-top: 50px !important;
+}
+
+/* Styles pour les éléments de la hiérarchie */
+.pdf-mode .hierarchy-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    margin: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Styles pour le footer */
+.pdf-mode footer {
+    background-color: #1a1a2e !important;
+    padding: 20px !important;
+    text-align: center !important;
+    color: #ddd !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+
+/* Styles pour le header */
+.pdf-mode header {
+    position: relative !important;
+    background: rgba(26, 26, 46, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Styles pour les éléments de navigation */
+.pdf-mode nav ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 30px !important;
+    justify-content: center !important;
+}
+
+/* Styles pour les éléments de navigation */
+.pdf-mode nav a {
+    text-decoration: none !important;
+    color: #ccc !important;
+    font-size: 14px !important;
+    transition: 0.3s !important;
+}
+
+/* Styles pour les éléments de navigation au survol */
+.pdf-mode nav a:hover {
+    color: #2e86c1 !important;
+}
+
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid {
+    display: block !important;
+}
+
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item {
+    margin-bottom: 25px !important;
+}
+
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item p {
+    max-width: 900px !important;
+    line-height: 1.7 !important;
+    color: #ddd !important;
+}
+
+/* Styles pour les éléments de la grille */
+.pdf-mode .grid-item h2 {
+    font-size: 42px !important;
+    margin-bottom: 25px !important;
+    color: #2e86c1 !important;
+}
+
     </style>
 </head>
 <body>
@@ -682,4 +998,3 @@ Malgré la distance et des environnements différents, ils ont développé une r
     </script>
 </body>
 </html>
-
